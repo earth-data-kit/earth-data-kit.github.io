@@ -318,20 +318,29 @@ to download.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="earth_data_kit.stitching.DataSet.to_cog">
-<span class="sig-name descname"><span class="pre">to_cog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">destination</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bands</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gdal_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.DataSet.to_cog" title="Link to this definition">¶</a></dt>
-<dd><p>Stitches the scene files together according to the band arrangement provided by the user.
-Internally uses gdalwarp. Currently supported gdalwarp options are</p>
-<ul class="simple">
-<li><p>t_srs - Set target spatial reference.</p></li>
-<li><p>tr - Set output file resolution (in target georeferenced units).</p></li>
-<li><p>r - Resampling method</p></li>
-</ul>
-<p>Read more about supported options: <a class="reference external" href="https://gdal.org/programs/gdalwarp.html">gdalwarp</a>.</p>
+<span class="sig-name descname"><span class="pre">to_cog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">destination</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bands</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gdal_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.DataSet.to_cog" title="Link to this definition">¶</a></dt>
+<dd><p>Calls self.to_vrts to create stitched and stacked output files (vrts) and then converts them to COG</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>destination</strong> (<em>string</em>) – Output path for generated files</p></li>
 <li><p><strong>bands</strong> (<em>list</em><em>[</em><em>string</em><em>]</em>) – Ordered list of bands to output in COGs</p></li>
+<li><p><strong>gdal_options</strong> (<em>dict</em><em>, </em><em>optional</em>) – GDAL options to pass during stitching. Defaults to {}. Currently supported options are <code class="docutils literal notranslate"><span class="pre">-t_srs</span></code>, <code class="docutils literal notranslate"><span class="pre">-tr</span></code>, <code class="docutils literal notranslate"><span class="pre">-r</span></code>. Example <code class="docutils literal notranslate"><span class="pre">{&quot;t_srs&quot;:</span> <span class="pre">&quot;EPSG:3857&quot;,</span> <span class="pre">&quot;tr&quot;:</span> <span class="pre">30,</span> <span class="pre">&quot;r&quot;:</span> <span class="pre">&quot;nearest&quot;}</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="earth_data_kit.stitching.DataSet.to_zarr">
+<span class="sig-name descname"><span class="pre">to_zarr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">destination</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bands</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gdal_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.DataSet.to_zarr" title="Link to this definition">¶</a></dt>
+<dd><p>Calls self.to_vrts to create stitched and stacked output files (vrts) and converts them to Zarrs.
+First vrts are converted to COGs, then read and combined using rioxarray and xarray.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>destination</strong> (<em>string</em>) – Output path for generated files</p></li>
+<li><p><strong>bands</strong> (<em>list</em><em>[</em><em>string</em><em>]</em>) – Ordered list of bands to output in band dimension</p></li>
 <li><p><strong>gdal_options</strong> (<em>dict</em><em>, </em><em>optional</em>) – GDAL options to pass during stitching. Defaults to {}. Currently supported options are <code class="docutils literal notranslate"><span class="pre">-t_srs</span></code>, <code class="docutils literal notranslate"><span class="pre">-tr</span></code>, <code class="docutils literal notranslate"><span class="pre">-r</span></code>. Example <code class="docutils literal notranslate"><span class="pre">{&quot;t_srs&quot;:</span> <span class="pre">&quot;EPSG:3857&quot;,</span> <span class="pre">&quot;tr&quot;:</span> <span class="pre">30,</span> <span class="pre">&quot;r&quot;:</span> <span class="pre">&quot;nearest&quot;}</span></code></p></li>
 </ul>
 </dd>
@@ -396,6 +405,7 @@ Internally uses gdalwarp. Currently supported gdalwarp options are</p>
 <li><a class="reference internal" href="#earth_data_kit.stitching.DataSet.get_distinct_bands"><code class="docutils literal notranslate"><span class="pre">DataSet.get_distinct_bands()</span></code></a></li>
 <li><a class="reference internal" href="#earth_data_kit.stitching.DataSet.sync"><code class="docutils literal notranslate"><span class="pre">DataSet.sync()</span></code></a></li>
 <li><a class="reference internal" href="#earth_data_kit.stitching.DataSet.to_cog"><code class="docutils literal notranslate"><span class="pre">DataSet.to_cog()</span></code></a></li>
+<li><a class="reference internal" href="#earth_data_kit.stitching.DataSet.to_zarr"><code class="docutils literal notranslate"><span class="pre">DataSet.to_zarr()</span></code></a></li>
 </ul>
 </li>
 </ul>
