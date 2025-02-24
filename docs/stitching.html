@@ -3,13 +3,15 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Defining source" href="stitching/defining-source.html" /><link rel="prev" title="Getting Started" href="getting-started.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Defining Source" href="stitching/defining-source.html" /><link rel="prev" title="Getting Started" href="getting-started.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>Stitching - Earth Data Kit 1.0.0-alpha documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+        <title>Stitching - Earth Data Kit 1.0.0-alpha2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=0bffc54f" />
     
     
 
@@ -166,7 +168,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Earth Data Kit 1.0.0-alpha documentation</div></a>
+      <a href="index.html"><div class="brand">Earth Data Kit 1.0.0-alpha2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -178,7 +180,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -190,7 +192,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">Earth Data Kit 1.0.0-alpha documentation</span>
+  <span class="sidebar-brand-text">Earth Data Kit 1.0.0-alpha2 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -201,11 +203,17 @@
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
 <li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Stitching</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Stitching</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="stitching/defining-source.html">Defining source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stitching/using-a-grid-file.html">Using a grid file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stitching/without-a-grid-file.html">Without a grid file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stitching/defining-source.html">Defining Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stitching/using-a-grid-file.html">Using a Grid File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stitching/without-a-grid-file.html">Without a Grid File</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/s3.html">AWS S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/earth_engine.html">Google Earth Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-reference.html">API Reference</a></li>
 </ul>
 
@@ -241,7 +249,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -249,29 +257,39 @@
         <article role="main" id="furo-main-content">
           <section id="stitching">
 <h1>Stitching<a class="headerlink" href="#stitching" title="Link to this heading">¶</a></h1>
-<p>Earth Observation data is usually distributed as small scene files, with different projections, resolutions
-across data providers.</p>
-<p>For example Modis data &lt;<a class="reference external" href="https://registry.opendata.aws/modis/">https://registry.opendata.aws/modis/</a>&gt; and Sentinel-2 data &lt;<a class="reference external" href="https://registry.opendata.aws/sentinel-2/">https://registry.opendata.aws/sentinel-2/</a>&gt; both have different file path layout and are in different projections.</p>
-<p>Before using this data it’s important to combine different scene files together, re-arrange bands and bring the datasets to consistent resolution and projection.</p>
-<p>This module aims to make it easy for anyone to download and combine EO scene files into either COGs or Zarr
-so that they can be visualized or analyzed easily.</p>
-<p>The main class implemented is <strong>Dataset</strong>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">earth_data_kit</span> <span class="k">as</span> <span class="nn">edk</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">edk</span><span class="o">.</span><span class="n">stitching</span><span class="o">.</span><span class="n">DataSet</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+<p>Earth Observation (EO) data is often distributed as many small scene files. These files may vary in their projections, resolutions, and naming conventions depending on the data provider.</p>
+<p>For example, Modis (&lt;<a class="reference external" href="https://registry.opendata.aws/modis/">https://registry.opendata.aws/modis/</a>&gt;) and Sentinel-2 (&lt;<a class="reference external" href="https://registry.opendata.aws/sentinel-2/">https://registry.opendata.aws/sentinel-2/</a>&gt;) both organize their data differently and use different coordinate systems.</p>
+<p>Before analysis or visualization, you typically need to:</p>
+<ul class="simple">
+<li><p>Download multiple scene files.</p></li>
+<li><p>Rearrange or select specific bands.</p></li>
+<li><p>Harmonize resolutions and projections.</p></li>
+</ul>
+<p>The Stitching module simplifies this workflow by enabling users to mosaic and preprocess EO scene files into a unified dataset. The resulting outputs (VRTs) can then be formatted as Cloud Optimized GeoTIFFs (COGs) or Zarr archives for easy use using GDAL.</p>
+<section id="dataset-class">
+<h2>Dataset Class<a class="headerlink" href="#dataset-class" title="Link to this heading">¶</a></h2>
+<p>The main class in this module is <strong>Dataset</strong>, which manages the entire stitching process. Below is an example of its usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">earth_data_kit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">edk</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">edk</span><span class="o">.</span><span class="n">stitching</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Parameters:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> - string, used to create temporary directory for raw scene files and other intermediary files</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">source</span></code> - string, engine dependent. Read more at - <a class="reference internal" href="stitching/defining-source.html#defining-source"><span class="std std-ref">Defining source</span></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">engine</span></code> - string, engine identifier, one of possible values. <strong>s3</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: A string used to create a temporary directory for catalog and intermediate vrts.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span></code>: A string specifying the data source; its format depends on the chosen engine. (See <a class="reference internal" href="stitching/defining-source.html#defining-source"><span class="std std-ref">Defining Source</span></a> for more details.)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">engine</span></code>: A string that identifies the processing engine. Currently supported value: <strong>s3</strong>, <strong>earth_engine</strong>.</p></li>
 </ul>
+</section>
+<section id="additional-documentation">
+<h2>Additional Documentation<a class="headerlink" href="#additional-documentation" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="stitching/defining-source.html">Defining source</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stitching/using-a-grid-file.html">Using a grid file</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stitching/without-a-grid-file.html">Without a grid file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stitching/defining-source.html">Defining Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stitching/using-a-grid-file.html">Using a Grid File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stitching/without-a-grid-file.html">Without a Grid File</a></li>
 </ul>
 </div>
+</section>
 </section>
 
         </article>
@@ -284,7 +302,7 @@ so that they can be visualized or analyzed easily.</p>
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Defining source</div>
+                <div class="title">Defining Source</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -317,15 +335,37 @@ so that they can be visualized or analyzed easily.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Stitching</a><ul>
+<li><a class="reference internal" href="#dataset-class">Dataset Class</a></li>
+<li><a class="reference internal" href="#additional-documentation">Additional Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=a264681e"></script>
+</div><script src="_static/documentation_options.js?v=12131f25"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
     </body>
 </html>

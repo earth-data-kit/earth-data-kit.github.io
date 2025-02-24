@@ -3,13 +3,15 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="API Reference" href="../api-reference.html" /><link rel="prev" title="Using a grid file" href="using-a-grid-file.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Examples" href="../examples.html" /><link rel="prev" title="Using a Grid File" href="using-a-grid-file.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>Without a grid file - Earth Data Kit 1.0.0-alpha documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+        <title>Without a Grid File - Earth Data Kit 1.0.0-alpha2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=0bffc54f" />
     
     
 
@@ -166,7 +168,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Earth Data Kit 1.0.0-alpha documentation</div></a>
+      <a href="../index.html"><div class="brand">Earth Data Kit 1.0.0-alpha2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -190,7 +192,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">Earth Data Kit 1.0.0-alpha documentation</span>
+  <span class="sidebar-brand-text">Earth Data Kit 1.0.0-alpha2 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -201,11 +203,17 @@
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../stitching.html">Stitching</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Stitching</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="defining-source.html">Defining source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using-a-grid-file.html">Using a grid file</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Without a grid file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="defining-source.html">Defining Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-a-grid-file.html">Using a Grid File</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Without a Grid File</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/s3.html">AWS S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/earth_engine.html">Google Earth Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api-reference.html">API Reference</a></li>
 </ul>
 
@@ -248,50 +256,50 @@
         </div>
         <article role="main" id="furo-main-content">
           <section id="without-a-grid-file">
-<h1>Without a grid file<a class="headerlink" href="#without-a-grid-file" title="Link to this heading">¶</a></h1>
-<p>When grid file is not available system can try to read tile metadata to do spatial filtering. In such cases users can simply supply <code class="docutils literal notranslate"><span class="pre">*</span></code> (wildcard) instead of providing <code class="docutils literal notranslate"><span class="pre">h</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code> parts of source string.</p>
-<p>To demonstrate we will try to download data the same data, Albania for 1st month of Jan, 2017 without using a grid file</p>
+<h1>Without a Grid File<a class="headerlink" href="#without-a-grid-file" title="Link to this heading">¶</a></h1>
+<p>If a grid file is not available, the system will use tile metadata to perform spatial filtering.</p>
+<p>In this approach, you simply replace the specific grid indices (<code class="docutils literal notranslate"><span class="pre">h</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code>) in the source string with a wildcard (<code class="docutils literal notranslate"><span class="pre">*</span></code>).</p>
+<p>This example demonstrates how to download data for Albania during January 2017 without using a grid file.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This method can be time consuming as metadata of all files is fetched first and then filtered based on bounding box</p>
+<p>This method can be slower because it first fetches metadata for all available files before applying the bounding box filter.</p>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">earth_data_kit</span> <span class="k">as</span> <span class="nn">edk</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">earth_data_kit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">edk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
 
-<span class="c1"># Derived from path of a single scene file</span>
+<span class="c1"># Define the source path for MODIS scene files using a wildcard pattern.</span>
+<span class="c1"># The pattern uses strftime formatting (%Y%j) to dynamically match dates within the S3 directory structure.</span>
 <span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;s3://modis-pds/MCD43A4.006/*/*/%Y%j/*_B07.TIF&quot;</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">edk</span><span class="o">.</span><span class="n">stitching</span><span class="o">.</span><span class="n">DataSet</span><span class="p">(</span><span class="s2">&quot;modis-pds&quot;</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="s2">&quot;s3&quot;</span><span class="p">)</span>
 
-<span class="c1"># Modis Data is at a daily frequency so we create one COG per day</span>
-<span class="n">destination</span> <span class="o">=</span> <span class="s2">&quot;/&lt;local_path&gt;/earth-data-kit/final/modis-pds/</span><span class="si">%d</span><span class="s2">-%m-%Y-b07.TIF&quot;</span>
+<span class="c1"># Instantiate the Dataset object for the MODIS collection using the S3 engine.</span>
+<span class="c1"># The Dataset class handles scanning and filtering of scene files.</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">edk</span><span class="o">.</span><span class="n">stitching</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s2">&quot;modis-pds&quot;</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="s2">&quot;s3&quot;</span><span class="p">)</span>
 
-<span class="c1"># As an example we will use Albania&#39;s bounding box and get data for the month of January 2017 from s3://modis-pds/MCD43A4.006/</span>
+
+<span class="c1"># Define the spatial extent (in EPSG:4326) using Albania&#39;s bounding box.</span>
+<span class="c1"># Format: (min_longitude, min_latitude, max_longitude, max_latitude)</span>
 <span class="n">bbox</span> <span class="o">=</span> <span class="p">(</span><span class="mf">19.3044861183</span><span class="p">,</span> <span class="mf">39.624997667</span><span class="p">,</span> <span class="mf">21.0200403175</span><span class="p">,</span> <span class="mf">42.6882473822</span><span class="p">)</span>
+
+<span class="c1"># Define the temporal range for data selection.</span>
+<span class="c1"># The dataset covers the month of January 2017; note that the end date is inclusive.</span>
 <span class="n">date_range</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
     <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">),</span>
-<span class="p">)</span>  <span class="c1"># (Start, End) - End date is inclusive</span>
+<span class="p">)</span>
 
-<span class="c1"># Setting time bounds</span>
+<span class="c1"># Configure the Dataset with the defined time bounds.</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">set_timebounds</span><span class="p">(</span><span class="n">date_range</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">date_range</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
-<span class="c1"># Setting spatial bounds. We pass the bbox we are interested in</span>
+<span class="c1"># Configure the spatial filter for the Dataset.</span>
+<span class="c1"># Since no grid file is provided, the filtering is based solely on the bounding box.</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">set_spacebounds</span><span class="p">(</span><span class="n">bbox</span><span class="p">)</span>
 
-<span class="c1"># Getting distinct bands. This will help us decide band arrangement when stitching scenes together</span>
-<span class="n">bands</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_distinct_bands</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">bands</span><span class="p">)</span>
+<span class="c1"># Discover the available scene files that match the defined criteria.</span>
+<span class="c1"># This step scans the remote source and identifies all files that meet the spatial and temporal constraints.</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">discover</span><span class="p">()</span>
 
-<span class="c1"># Downloading scene files</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">sync</span><span class="p">()</span>
-
-<span class="c1"># Finally stitching them together with the band arrangement as below</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">to_cog</span><span class="p">(</span>
-    <span class="n">destination</span><span class="p">,</span>
-    <span class="n">bands</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">&quot;Nadir_Reflectance_Band7&quot;</span><span class="p">,</span>
-    <span class="p">],</span>
-<span class="p">)</span>
+<span class="c1"># Generate VRTs files for the discovered scene files.</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">to_vrts</span><span class="p">(</span><span class="n">bands</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Nadir_Reflectance_Band7&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </section>
@@ -301,12 +309,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../api-reference.html">
+          <a class="next-page" href="../examples.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">API Reference</div>
+                <div class="title">Examples</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -317,7 +325,7 @@
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Using a grid file</div>
+                <div class="title">Using a Grid File</div>
                 
               </div>
             </a>
@@ -345,9 +353,11 @@
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=a264681e"></script>
+</div><script src="../_static/documentation_options.js?v=12131f25"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
     </body>
 </html>

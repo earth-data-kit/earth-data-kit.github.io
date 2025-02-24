@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Stitching" href="stitching.html" /><link rel="prev" title="Earth Data Kit" href="index.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="API Reference" href="api-reference.html" /><link rel="prev" title="Google Earth Engine" href="examples/earth_engine.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>Getting Started - Earth Data Kit 1.0.0-alpha2 documentation</title>
+        <title>Roadmap - Earth Data Kit 1.0.0-alpha2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -180,7 +180,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -201,7 +201,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="stitching.html">Stitching</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Stitching</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="stitching/defining-source.html">Defining Source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stitching/using-a-grid-file.html">Using a Grid File</a></li>
@@ -213,7 +213,7 @@
 <li class="toctree-l2"><a class="reference internal" href="examples/earth_engine.html">Google Earth Engine</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-reference.html">API Reference</a></li>
 </ul>
 
@@ -235,7 +235,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="_sources/getting-started.rst.txt" title="View this page">
+  <a class="muted-link" href="_sources/roadmap.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -249,71 +249,86 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="getting-started">
-<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h1>
-<section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">¶</a></h2>
-<p>Before using Earth Data Kit, ensure that the following are installed:</p>
-<ul class="simple">
-<li><p>Python 3.12 or newer</p></li>
-<li><p>GDAL 3.10 or above - <a class="reference external" href="https://gdal.org/en/stable/download.html#binaries">https://gdal.org/en/stable/download.html#binaries</a></p></li>
-<li><p>s5cmd - <a class="reference external" href="https://github.com/peak/s5cmd">https://github.com/peak/s5cmd</a></p></li>
-</ul>
-</section>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
-<p>To install Earth Data Kit, follow these steps:</p>
-<ol class="arabic">
-<li><p>Download the latest release from the official GitHub releases page:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/earth-data-kit/earth-data-kit/releases">https://github.com/earth-data-kit/earth-data-kit/releases</a></p></li>
-</ul>
-</li>
-<li><p>After downloading the tarball, install the package using pip. For example, within your virtual environment execute:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>wget<span class="w"> </span>https://github.com/siddhantgupta3/earth-data-kit/releases/download/1.0.0a1/earth_data_kit-1.0.0a1.tar.gz
-<span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>pip3<span class="w"> </span>install<span class="w"> </span>earth_data_kit-1.0.0a1.tar.gz
-</pre></div>
+          <section id="roadmap">
+<h1>Roadmap<a class="headerlink" href="#roadmap" title="Link to this heading">¶</a></h1>
+<p>Below is the tentative roadmap for Earth Data Kit. Our approach is to look closely on how a GIS pipeline is built and fill the critical gaps using existing technologies or building new ones.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We view this roadmap as a collaborative and dynamic blueprint for Earth Data Kit. We hope that community contributions will continuously refine these plans to meet real-world challenges.</p>
 </div>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt><strong>Collection</strong></dt><dd><ul class="simple">
+<li><p>A module dedicated to collecting data from varied sources.</p></li>
+<li><p>Prepares data for analysis with functionalities such as clipping, reprojecting, and regridding.</p></li>
+<li><dl class="simple">
+<dt>Supported Sources:</dt><dd><ul>
+<li><dl class="simple">
+<dt>Rasters:</dt><dd><ul>
+<li><p>S3</p></li>
+<li><p>Google Earth Engine</p></li>
+<li><p>HTTP/HTTP(s) servers (<em>Planned</em>)</p></li>
+<li><p>NASA Earth Data (<em>Planned</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Vectors (<em>Planned</em>):</dt><dd><ul>
+<li><p>OSM</p></li>
+<li><p>Overture Maps</p></li>
+<li><p>Google Buildings</p></li>
+<li><p>Bing Buildings</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Visualization</strong></dt><dd><ul class="simple">
+<li><p>Extend xarray and geopandas to support visualization using deck.gl and pydeck.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Integration with xarray</strong></dt><dd><ul class="simple">
+<li><p>Develop a new xarray backend for EDK datasets.</p></li>
+<li><p>Enable lazy evaluation of datasets using Ray.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Integration with geopandas</strong></dt><dd><ul class="simple">
+<li><p>Introduce lazy evaluation.</p></li>
+<li><p>Support handling of out-of-memory datasets.</p></li>
+<li><p>Leverage Ray for backend processing.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Cloud Support</strong></dt><dd><ul class="simple">
+<li><p>Run seamlessly on AWS (Lambda, Batch, etc.), GCP, and Azure.</p></li>
+</ul>
+</dd>
+</dl>
 </li>
 </ol>
-</section>
-<section id="environment-configuration">
-<h2>Environment Configuration<a class="headerlink" href="#environment-configuration" title="Link to this heading">¶</a></h2>
-<p>Earth Data Kit can be customized via environment variables. This approach lets you easily configure settings such as AWS credentials, GDAL options, and other operational parameters. You can maintain these settings in a <code class="docutils literal notranslate"><span class="pre">.env</span></code> file and load them using the <code class="docutils literal notranslate"><span class="pre">python-dotenv</span></code> package.</p>
-<section id="general-options">
-<h3>General Options<a class="headerlink" href="#general-options" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">TMP_DIR</span></code> <em>(Required)</em>: The directory path used for storing temporary files (e.g., catalog, pre-processed VRTs).</p></li>
-</ul>
-</section>
-<section id="aws-options">
-<h3>AWS Options<a class="headerlink" href="#aws-options" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">AWS_REGION</span></code>: Specifies the AWS region to use (e.g., us-west-2).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AWS_NO_SIGN_REQUEST</span></code> (YES/NO): If set to YES, this option disables request signing, meaning AWS credentials will be bypassed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AWS_REQUEST_PAYER</span></code> (requester): Indicates that the requester accepts any charges that may result from the request. Use this when accessing buckets that require payer confirmation.</p></li>
-</ul>
-</section>
-<section id="google-earth-engine-options">
-<h3>Google Earth Engine Options<a class="headerlink" href="#google-earth-engine-options" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">GOOGLE_APPLICATION_CREDENTIALS</span></code>: Specifies the path to the JSON credentials file for authenticating with the Earth Engine API.</p></li>
-</ul>
-</section>
-<section id="gdal-options">
-<h3>GDAL Options<a class="headerlink" href="#gdal-options" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">GDAL_HTTP_TCP_KEEPALIVE</span></code> (YES/NO): Determines whether to enable TCP keep-alive for GDAL HTTP connections (defaults to NO).</p></li>
-</ul>
-<p>This configuration setup provides flexibility to adapt Earth Data Kit to your specific environment and processing needs.</p>
-</section>
-</section>
 </section>
 
         </article>
@@ -321,23 +336,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="stitching.html">
+          <a class="next-page" href="api-reference.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Stitching</div>
+                <div class="title">API Reference</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="index.html">
+          <a class="prev-page" href="examples/earth_engine.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Home</div>
+                <div class="title">Google Earth Engine</div>
                 
               </div>
             </a>
@@ -359,35 +374,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Getting Started</a><ul>
-<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li><a class="reference internal" href="#installation">Installation</a></li>
-<li><a class="reference internal" href="#environment-configuration">Environment Configuration</a><ul>
-<li><a class="reference internal" href="#general-options">General Options</a></li>
-<li><a class="reference internal" href="#aws-options">AWS Options</a></li>
-<li><a class="reference internal" href="#google-earth-engine-options">Google Earth Engine Options</a></li>
-<li><a class="reference internal" href="#gdal-options">GDAL Options</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

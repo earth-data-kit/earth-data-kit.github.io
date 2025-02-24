@@ -3,13 +3,15 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Without a grid file" href="stitching/without-a-grid-file.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Roadmap" href="roadmap.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>API Reference - Earth Data Kit 1.0.0-alpha documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+        <title>API Reference - Earth Data Kit 1.0.0-alpha2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=0bffc54f" />
     
     
 
@@ -166,7 +168,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Earth Data Kit 1.0.0-alpha documentation</div></a>
+      <a href="index.html"><div class="brand">Earth Data Kit 1.0.0-alpha2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -190,7 +192,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">Earth Data Kit 1.0.0-alpha documentation</span>
+  <span class="sidebar-brand-text">Earth Data Kit 1.0.0-alpha2 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -201,11 +203,17 @@
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="stitching.html">Stitching</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Stitching</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="stitching/defining-source.html">Defining source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stitching/using-a-grid-file.html">Using a grid file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stitching/without-a-grid-file.html">Without a grid file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stitching/defining-source.html">Defining Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stitching/using-a-grid-file.html">Using a Grid File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stitching/without-a-grid-file.html">Without a Grid File</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/s3.html">AWS S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/earth_engine.html">Google Earth Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">API Reference</a></li>
 </ul>
 
@@ -251,58 +259,204 @@
 <h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">¶</a></h1>
 <p>The API reference provides an overview of all public objects, functions and methods implemented in Earth Data Kit.</p>
 <dl class="py class">
-<dt class="sig sig-object py" id="earth_data_kit.stitching.DataSet">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">earth_data_kit.stitching.</span></span><span class="sig-name descname"><span class="pre">DataSet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.DataSet" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="earth_data_kit.stitching.Dataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">earth_data_kit.stitching.</span></span><span class="sig-name descname"><span class="pre">Dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.Dataset" title="Link to this definition">¶</a></dt>
 <dd><p>The main class implemented by stitching module. Acts as a wrapper above a single remote dataset</p>
+<p>Initializes a new dataset instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>id</strong> (<em>string</em>) – User provided unique string</p></li>
-<li><p><strong>source</strong> (<em>string</em>) – Source path, Read more <a class="reference internal" href="stitching/defining-source.html#defining-source"><span class="std std-ref">Defining source</span></a></p></li>
-<li><p><strong>engine</strong> (<em>string</em>) – Remote datasource engine, accepted values - <code class="docutils literal notranslate"><span class="pre">s3</span></code></p></li>
+<li><p><strong>name</strong> (<em>str</em>) – User provided name, should be unique across datasets being opened.</p></li>
+<li><p><strong>source</strong> (<em>str</em>) – Source identifier, Read more <a class="reference internal" href="stitching/defining-source.html#defining-source"><span class="std std-ref">Defining Source</span></a>.</p></li>
+<li><p><strong>engine</strong> (<em>str</em>) – Remote datasource engine, accepted values - <code class="docutils literal notranslate"><span class="pre">s3</span></code>, <code class="docutils literal notranslate"><span class="pre">earth_engine</span></code>.</p></li>
 <li><p><strong>clean</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to clean the tmp directory before stitching. Defaults to False.</p></li>
 </ul>
 </dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – If the provided engine is not supported.</p>
+</dd>
 </dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">earth_data_kit.stitching.classes.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dataset</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Initialize a dataset using the Earth Engine engine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="s2">&quot;example_dataset&quot;</span><span class="p">,</span> <span class="s2">&quot;LANDSAT/LC08/C01/T1_SR&quot;</span><span class="p">,</span> <span class="s2">&quot;earth_engine&quot;</span><span class="p">,</span> <span class="n">clean</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Alternatively, initialize a dataset using the S3 engine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="s2">&quot;example_dataset&quot;</span><span class="p">,</span> <span class="s2">&quot;s3://your-bucket/path&quot;</span><span class="p">,</span> <span class="s2">&quot;s3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <dl class="py method">
-<dt class="sig sig-object py" id="earth_data_kit.stitching.DataSet.set_timebounds">
-<span class="sig-name descname"><span class="pre">set_timebounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.DataSet.set_timebounds" title="Link to this definition">¶</a></dt>
-<dd><p>Sets time bounds for which we want to download the data for.</p>
+<dt class="sig sig-object py" id="earth_data_kit.stitching.Dataset.set_timebounds">
+<span class="sig-name descname"><span class="pre">set_timebounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.Dataset.set_timebounds" title="Link to this definition">¶</a></dt>
+<dd><p>Sets time bounds for which we want to download the data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>start</strong> (<em>datetime</em>) – Start data</p></li>
-<li><p><strong>end</strong> (<em>datetime</em>) – End date, inclusive</p></li>
+<li><p><strong>start</strong> (<em>datetime</em>) – Start date.</p></li>
+<li><p><strong>end</strong> (<em>datetime</em>) – End date, inclusive.</p></li>
 </ul>
 </dd>
 </dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">earth_data_kit.stitching</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dataset</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="s2">&quot;example_dataset&quot;</span><span class="p">,</span> <span class="s2">&quot;LANDSAT/LC08/C01/T1_SR&quot;</span><span class="p">,</span> <span class="s2">&quot;earth_engine&quot;</span><span class="p">,</span> <span class="n">clean</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_timebounds</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="earth_data_kit.stitching.DataSet.set_spacebounds">
-<span class="sig-name descname"><span class="pre">set_spacebounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bbox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matcher</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.DataSet.set_spacebounds" title="Link to this definition">¶</a></dt>
-<dd><p>Sets spatial bounds using a bbox provided.
-Optionally you can also provide a grid file and matching function which can then be used to pinpoint the exact scene files
-to download.</p>
-<p>Read more on <a class="reference internal" href="stitching/using-a-grid-file.html#using-a-grid-file"><span class="std std-ref">Using a grid file</span></a></p>
+<dt class="sig sig-object py" id="earth_data_kit.stitching.Dataset.set_spacebounds">
+<span class="sig-name descname"><span class="pre">set_spacebounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bbox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matcher</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.Dataset.set_spacebounds" title="Link to this definition">¶</a></dt>
+<dd><p>Configure spatial constraints for the dataset using a bounding box and, optionally, a grid file.</p>
+<p>This method sets up the spatial filtering parameters by specifying a bounding box defined by
+four coordinates in EPSG:4326. Additionally, if a grid file is provided (currently only KML files are supported),
+along with a corresponding matcher function, the method will utilize these to accurately pinpoint the scene files to download.
+The matcher function is expected to extract the necessary spatial components from each grid element to tailor the scene selection.</p>
+<p>For more details on grid file utilization, please refer to <a class="reference internal" href="stitching/using-a-grid-file.html#using-a-grid-file"><span class="std std-ref">Using a Grid File</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>bbox</strong> (<em>tuple</em><em>[</em><em>float</em><em>, </em><em>float</em><em>, </em><em>float</em><em>, </em><em>float</em><em>]</em>) – Bounding box as a set of four coordinates in EPSG:4326</p></li>
-<li><p><strong>grid_file</strong> (<em>string</em><em>, </em><em>optional</em>) – File path to grid file, currently only kml files are supported. Defaults to None.</p></li>
-<li><p><strong>matcher</strong> (<em>function</em><em>, </em><em>optional</em>) – Lambda function to extract spatial parts for scene filepaths. Defaults to None.</p></li>
+<li><p><strong>bbox</strong> (<em>tuple</em><em>[</em><em>float</em><em>, </em><em>float</em><em>, </em><em>float</em><em>, </em><em>float</em><em>]</em>) – A tuple of four coordinates in the order
+(min_longitude, min_latitude, max_longitude, max_latitude)/(xmin, ymin, xmax, ymax) defining the spatial extent.</p></li>
+<li><p><strong>grid_file</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to the grid file (only KML files are currently supported). Defaults to None.</p></li>
+<li><p><strong>matcher</strong> (<em>function</em><em>, </em><em>optional</em>) – A lambda or function used to extract spatial parameters from grid elements
+for matching scene file paths. Defaults to None.</p></li>
 </ul>
 </dd>
 </dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">earth_data_kit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">edk</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">edk</span><span class="o">.</span><span class="n">stitching</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s2">&quot;example_dataset&quot;</span><span class="p">,</span> <span class="s2">&quot;s3://your-bucket/path&quot;</span><span class="p">,</span> <span class="s2">&quot;s3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Setting spatial bounds using only a bounding box:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_spacebounds</span><span class="p">((</span><span class="mf">19.3044861183</span><span class="p">,</span> <span class="mf">39.624997667</span><span class="p">,</span> <span class="mf">21.0200403175</span><span class="p">,</span> <span class="mf">42.6882473822</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Setting spatial bounds with a grid file and a matcher function:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">extract_grid_components</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="gp">... </span>    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;h:(\d+)\s+v:(\d+)&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;h&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_spacebounds</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">(</span><span class="mf">19.3044861183</span><span class="p">,</span> <span class="mf">39.624997667</span><span class="p">,</span> <span class="mf">21.0200403175</span><span class="p">,</span> <span class="mf">42.6882473822</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">grid_file</span><span class="o">=</span><span class="s2">&quot;path/to/grid.kml&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">matcher</span><span class="o">=</span><span class="n">extract_grid_components</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="earth_data_kit.stitching.DataSet.get_distinct_bands">
-<span class="sig-name descname"><span class="pre">get_distinct_bands</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.DataSet.get_distinct_bands" title="Link to this definition">¶</a></dt>
-<dd><p>Reads the metadata from scene files and extract distinct bands available.</p>
+<dt class="sig sig-object py" id="earth_data_kit.stitching.Dataset.set_gdal_options">
+<span class="sig-name descname"><span class="pre">set_gdal_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.Dataset.set_gdal_options" title="Link to this definition">¶</a></dt>
+<dd><p>Sets GDAL options for the dataset. These options are passed directly to GDAL commands (e.g., gdalwarp and gdalbuildvrt)
+and allow customization of the processing pipeline.</p>
+<dl class="simple">
+<dt>Supported GDAL options include:</dt><dd><ul class="simple">
+<li><p><strong>-t_srs</strong>: Define the target spatial reference system (defaults to EPSG:3857 if not provided).</p></li>
+<li><p><strong>-tr</strong>: Specify the output resolution (in target units; if -t_srs is not provided, resolution is calculated in meters).</p></li>
+<li><p><strong>-r</strong>: Set the resampling method.</p></li>
+<li><p><strong>-srcnodata</strong>: Indicate the source no-data value.</p></li>
+</ul>
+</dd>
+</dl>
+<p>For more details on these options, please refer to:
+<a class="reference external" href="https://gdal.org/programs/gdalwarp.html">https://gdal.org/programs/gdalwarp.html</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>options</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – Array of GDAL command-line options.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Configure GDAL options for target SRS, resolution, resampling method, and source no-data value.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_gdal_options</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="s2">&quot;-t_srs EPSG:4326&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;-tr 30 30&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;-r bilinear&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;-srcnodata 0&quot;</span>
+<span class="gp">... </span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="earth_data_kit.stitching.Dataset.discover">
+<span class="sig-name descname"><span class="pre">discover</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.Dataset.discover" title="Link to this definition">¶</a></dt>
+<dd><p>Scans the dataset source to identify, catalog, and save the intersecting tiles based on
+provided time and spatial constraints.</p>
+<dl class="simple">
+<dt>This method follows a multi-step workflow:</dt><dd><ol class="arabic simple">
+<li><p>Invokes the engine’s scan method to retrieve a dataframe of available tile metadata
+that match the time and spatial options.</p></li>
+<li><p>Concurrently retrieves detailed metadata for each tile by constructing Tile objects
+using a ThreadPoolExecutor.</p></li>
+<li><p>Converts the user-specified bounding box into a Shapely polygon (in EPSG:4326) and
+filters the tiles by comparing each tile’s extent (also converted to EPSG:4326) to the
+bounding box using an intersection test.</p></li>
+<li><p>Saves the catalog of the intersecting tiles as a CSV file at the location specified by
+self.catalog_path.</p></li>
+</ol>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Dataframe with band indexes, name and datatype</p>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – Propagates any exceptions encountered during scanning, metadata retrieval,
+    spatial filtering, or catalog saving.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">earth_data_kit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">edk</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Dummy grid extraction function.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">fn</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">edk</span><span class="o">.</span><span class="n">stitching</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">&quot;modis-pds&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;s3://modis-pds/MCD43A4.006/</span><span class="si">{h}</span><span class="s2">/</span><span class="si">{v}</span><span class="s2">/%Y%j/*_B0?.TIF&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;s3&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="kc">True</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_timebounds</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_spacebounds</span><span class="p">((</span><span class="mf">19.30</span><span class="p">,</span> <span class="mf">39.62</span><span class="p">,</span> <span class="mf">21.02</span><span class="p">,</span> <span class="mf">42.69</span><span class="p">),</span> <span class="s2">&quot;tests/fixtures/modis.kml&quot;</span><span class="p">,</span> <span class="n">fn</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">discover</span><span class="p">()</span> <span class="c1"># This will scan the dataset and save the catalog of intersecting tiles at the location specified by self.catalog_path.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="earth_data_kit.stitching.Dataset.get_bands">
+<span class="sig-name descname"><span class="pre">get_bands</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.Dataset.get_bands" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve unique band configurations from tile metadata.</p>
+<p>Aggregates metadata from each tile by extracting attributes such as resolution
+(x_res, y_res) and coordinate reference system (crs). The data is then grouped
+by columns: band index inside tile (idx), band description, data type (dtype),
+x_res, y_res, and crs.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">earth_data_kit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">edk</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Initialize the dataset (ensure &#39;source&#39; and &#39;fn&#39; are defined appropriately)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">edk</span><span class="o">.</span><span class="n">stitching</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s2">&quot;modis-pds&quot;</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="s2">&quot;s3&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_timebounds</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_spacebounds</span><span class="p">((</span><span class="mf">19.30</span><span class="p">,</span> <span class="mf">39.62</span><span class="p">,</span> <span class="mf">21.02</span><span class="p">,</span> <span class="mf">42.69</span><span class="p">),</span> <span class="s2">&quot;tests/fixtures/modis.kml&quot;</span><span class="p">,</span> <span class="n">fn</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">discover</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bands_df</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_bands</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">bands_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="go">   idx                description    dtype  x_res  y_res         crs</span>
+<span class="go">0    0  Nadir_Reflectance_Band1  uint16   30.0   30.0   EPSG:4326</span>
+<span class="go">1    1  Nadir_Reflectance_Band2  uint16   30.0   30.0   EPSG:4326</span>
+<span class="go">2    2  Nadir_Reflectance_Band3  uint16   30.0   30.0   EPSG:4326</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A DataFrame with unique band configurations.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>pd.DataFrame</p>
@@ -311,40 +465,28 @@ to download.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="earth_data_kit.stitching.DataSet.sync">
-<span class="sig-name descname"><span class="pre">sync</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.DataSet.sync" title="Link to this definition">¶</a></dt>
-<dd><p>Downloads the relevant scene files, based on temporal and spatial bounds provided by <code class="docutils literal notranslate"><span class="pre">set_timebounds</span></code> and <code class="docutils literal notranslate"><span class="pre">set_spacebounds</span></code> methods</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="earth_data_kit.stitching.DataSet.to_cog">
-<span class="sig-name descname"><span class="pre">to_cog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">destination</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bands</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gdal_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.DataSet.to_cog" title="Link to this definition">¶</a></dt>
-<dd><p>Calls self.to_vrts to create stitched and stacked output files (vrts) and then converts them to COG</p>
+<dt class="sig sig-object py" id="earth_data_kit.stitching.Dataset.to_vrts">
+<span class="sig-name descname"><span class="pre">to_vrts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bands</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.Dataset.to_vrts" title="Link to this definition">¶</a></dt>
+<dd><p>Stitches the scene files together into VRTs based on the ordered band arrangement provided.
+For each unique date, this function extracts the required bands from the tile metadata and
+creates individual single-band VRTs that are reprojected to EPSG:3857 by default (if no target spatial reference
+is specified). These single-band VRTs are then mosaiced per band and finally stacked into a multi-band VRT.</p>
+<p>GDAL options influencing the gdalwarp process can be configured using the <code class="xref py py-meth docutils literal notranslate"><span class="pre">edk.stitching.Dataset.set_gdal_options()</span></code> function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>destination</strong> (<em>string</em>) – Output path for generated files</p></li>
-<li><p><strong>bands</strong> (<em>list</em><em>[</em><em>string</em><em>]</em>) – Ordered list of bands to output in COGs</p></li>
-<li><p><strong>gdal_options</strong> (<em>dict</em><em>, </em><em>optional</em>) – GDAL options to pass during stitching. Defaults to {}. Currently supported options are <code class="docutils literal notranslate"><span class="pre">-t_srs</span></code>, <code class="docutils literal notranslate"><span class="pre">-tr</span></code>, <code class="docutils literal notranslate"><span class="pre">-r</span></code>. Example <code class="docutils literal notranslate"><span class="pre">{&quot;t_srs&quot;:</span> <span class="pre">&quot;EPSG:3857&quot;,</span> <span class="pre">&quot;tr&quot;:</span> <span class="pre">30,</span> <span class="pre">&quot;r&quot;:</span> <span class="pre">&quot;nearest&quot;}</span></code></p></li>
-</ul>
+<dd class="field-odd"><p><strong>bands</strong> (<em>list</em><em>[</em><em>string</em><em>]</em>) – Ordered list of band descriptions to output as VRTs.</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="earth_data_kit.stitching.DataSet.to_zarr">
-<span class="sig-name descname"><span class="pre">to_zarr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">destination</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bands</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gdal_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.DataSet.to_zarr" title="Link to this definition">¶</a></dt>
-<dd><p>Calls self.to_vrts to create stitched and stacked output files (vrts) and converts them to Zarrs.
-First vrts are converted to COGs, then read and combined using rioxarray and xarray.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>destination</strong> (<em>string</em>) – Output path for generated files</p></li>
-<li><p><strong>bands</strong> (<em>list</em><em>[</em><em>string</em><em>]</em>) – Ordered list of bands to output in band dimension</p></li>
-<li><p><strong>gdal_options</strong> (<em>dict</em><em>, </em><em>optional</em>) – GDAL options to pass during stitching. Defaults to {}. Currently supported options are <code class="docutils literal notranslate"><span class="pre">-t_srs</span></code>, <code class="docutils literal notranslate"><span class="pre">-tr</span></code>, <code class="docutils literal notranslate"><span class="pre">-r</span></code>. Example <code class="docutils literal notranslate"><span class="pre">{&quot;t_srs&quot;:</span> <span class="pre">&quot;EPSG:3857&quot;,</span> <span class="pre">&quot;tr&quot;:</span> <span class="pre">30,</span> <span class="pre">&quot;r&quot;:</span> <span class="pre">&quot;nearest&quot;}</span></code></p></li>
-</ul>
-</dd>
-</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">earth_data_kit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">edk</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">edk</span><span class="o">.</span><span class="n">stitching</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s2">&quot;example_dataset&quot;</span><span class="p">,</span> <span class="s2">&quot;s3://your-bucket-name/path/to/data&quot;</span><span class="p">,</span> <span class="s2">&quot;s3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_timebounds</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">discover</span><span class="p">()</span>  <span class="c1"># Discover available scene files before stitching</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bands</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">to_vrts</span><span class="p">(</span><span class="n">bands</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -357,14 +499,14 @@ First vrts are converted to COGs, then read and combined using rioxarray and xar
         
         <div class="related-pages">
           
-          <a class="prev-page" href="stitching/without-a-grid-file.html">
+          <a class="prev-page" href="roadmap.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Without a grid file</div>
+                <div class="title">Roadmap</div>
                 
               </div>
             </a>
@@ -399,13 +541,13 @@ First vrts are converted to COGs, then read and combined using rioxarray and xar
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">API Reference</a><ul>
-<li><a class="reference internal" href="#earth_data_kit.stitching.DataSet"><code class="docutils literal notranslate"><span class="pre">DataSet</span></code></a><ul>
-<li><a class="reference internal" href="#earth_data_kit.stitching.DataSet.set_timebounds"><code class="docutils literal notranslate"><span class="pre">DataSet.set_timebounds()</span></code></a></li>
-<li><a class="reference internal" href="#earth_data_kit.stitching.DataSet.set_spacebounds"><code class="docutils literal notranslate"><span class="pre">DataSet.set_spacebounds()</span></code></a></li>
-<li><a class="reference internal" href="#earth_data_kit.stitching.DataSet.get_distinct_bands"><code class="docutils literal notranslate"><span class="pre">DataSet.get_distinct_bands()</span></code></a></li>
-<li><a class="reference internal" href="#earth_data_kit.stitching.DataSet.sync"><code class="docutils literal notranslate"><span class="pre">DataSet.sync()</span></code></a></li>
-<li><a class="reference internal" href="#earth_data_kit.stitching.DataSet.to_cog"><code class="docutils literal notranslate"><span class="pre">DataSet.to_cog()</span></code></a></li>
-<li><a class="reference internal" href="#earth_data_kit.stitching.DataSet.to_zarr"><code class="docutils literal notranslate"><span class="pre">DataSet.to_zarr()</span></code></a></li>
+<li><a class="reference internal" href="#earth_data_kit.stitching.Dataset"><code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a><ul>
+<li><a class="reference internal" href="#earth_data_kit.stitching.Dataset.set_timebounds"><code class="docutils literal notranslate"><span class="pre">Dataset.set_timebounds()</span></code></a></li>
+<li><a class="reference internal" href="#earth_data_kit.stitching.Dataset.set_spacebounds"><code class="docutils literal notranslate"><span class="pre">Dataset.set_spacebounds()</span></code></a></li>
+<li><a class="reference internal" href="#earth_data_kit.stitching.Dataset.set_gdal_options"><code class="docutils literal notranslate"><span class="pre">Dataset.set_gdal_options()</span></code></a></li>
+<li><a class="reference internal" href="#earth_data_kit.stitching.Dataset.discover"><code class="docutils literal notranslate"><span class="pre">Dataset.discover()</span></code></a></li>
+<li><a class="reference internal" href="#earth_data_kit.stitching.Dataset.get_bands"><code class="docutils literal notranslate"><span class="pre">Dataset.get_bands()</span></code></a></li>
+<li><a class="reference internal" href="#earth_data_kit.stitching.Dataset.to_vrts"><code class="docutils literal notranslate"><span class="pre">Dataset.to_vrts()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -419,9 +561,11 @@ First vrts are converted to COGs, then read and combined using rioxarray and xar
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=a264681e"></script>
+</div><script src="_static/documentation_options.js?v=12131f25"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
     </body>
 </html>

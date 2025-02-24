@@ -6,10 +6,12 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Getting Started" href="getting-started.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>Earth Data Kit 1.0.0-alpha documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+        <title>Earth Data Kit 1.0.0-alpha2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=0bffc54f" />
     
     
 
@@ -166,7 +168,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">Earth Data Kit 1.0.0-alpha documentation</div></a>
+      <a href="#"><div class="brand">Earth Data Kit 1.0.0-alpha2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -190,7 +192,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
   
   
-  <span class="sidebar-brand-text">Earth Data Kit 1.0.0-alpha documentation</span>
+  <span class="sidebar-brand-text">Earth Data Kit 1.0.0-alpha2 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -201,11 +203,17 @@
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="stitching.html">Stitching</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Stitching</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="stitching/defining-source.html">Defining source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stitching/using-a-grid-file.html">Using a grid file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stitching/without-a-grid-file.html">Without a grid file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stitching/defining-source.html">Defining Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stitching/using-a-grid-file.html">Using a Grid File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stitching/without-a-grid-file.html">Without a Grid File</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/s3.html">AWS S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/earth_engine.html">Google Earth Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-reference.html">API Reference</a></li>
 </ul>
 
@@ -249,7 +257,11 @@
         <article role="main" id="furo-main-content">
           <section id="earth-data-kit">
 <h1>Earth Data Kit<a class="headerlink" href="#earth-data-kit" title="Link to this heading">¶</a></h1>
-<p>Tools to make Geospatial Analysis easy and cheap</p>
+<p>Today, the GIS world is filled with many great tools and technologies. Each tool is specialized — some offer powerful mapping features, while others excel at data visualization.</p>
+<p>However, when you try to build a complete end-to-end data pipeline, the process becomes challenging, time-consuming and costly. This common struggle inspired us to create Earth Data Kit.</p>
+<p>EDK is designed to bridge these gaps, helping you connect various parts of the GIS process with ease. With Earth Data Kit, data scientists can focus on analyzing data and drawing insights instead of wrestling with complex data processes and engineering challenges.</p>
+<p>Check out our <a class="reference internal" href="roadmap.html#roadmap"><span class="std std-ref">Roadmap</span></a> to see what we’re working on and what is planned.</p>
+<p>Check out the <a class="reference internal" href="getting-started.html#getting-started"><span class="std std-ref">Getting Started</span></a> to learn how to install and use Earth Data Kit.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This project is under active development.</p>
@@ -257,18 +269,21 @@
 <section id="modules">
 <h2>Modules<a class="headerlink" href="#modules" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Stitching</strong> - Can be used to combine multiple scene files, also called tiles, from a variety of remote data sources, eg: S3, Earth Engine, HTTP/HTTPs servers, etc.</p></li>
+<li><p><strong>Stitching</strong> - Combines multiple scene files (tiles) from a variety of remote data sources such as S3, Google Earth Engine, and HTTP/HTTPS servers.</p></li>
 </ul>
-<p><strong>Input sources</strong></p>
+</section>
+<section id="input-data-sources">
+<h2>Input Data Sources<a class="headerlink" href="#input-data-sources" title="Link to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>S3 - <em>Implemented</em></p></li>
-<li><p>Google Earth Engine - <em>Planned</em></p></li>
-<li><p>ESGF &lt;<a class="reference external" href="https://esgf.llnl.gov/">https://esgf.llnl.gov/</a>&gt; - <em>Planned</em></p></li>
+<li><p>Google Earth Engine - <em>Implemented</em></p></li>
+<li><p>HTTP/HTTPs Servers - <em>Planned</em></p></li>
 </ol>
-<p><strong>Output formats</strong></p>
+</section>
+<section id="output-formats">
+<h2>Output Formats<a class="headerlink" href="#output-formats" title="Link to this heading">¶</a></h2>
 <ol class="arabic simple">
-<li><p>COGs (Cloud Optimized Geotiff) - <em>Implemented</em></p></li>
-<li><p>Zarr - <em>Planned</em></p></li>
+<li><p>Virtual Raster (VRT) - <em>Implemented</em></p></li>
 </ol>
 </section>
 <section id="contents">
@@ -276,26 +291,24 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting-started.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#environment-setup">Environment Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html#environment-configuration">Environment Configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="stitching.html">Stitching</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="stitching/defining-source.html">Defining source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stitching/using-a-grid-file.html">Using a grid file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stitching/without-a-grid-file.html">Without a grid file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stitching.html#dataset-class">Dataset Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stitching.html#additional-documentation">Additional Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/s3.html">AWS S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/earth_engine.html">Google Earth Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-reference.html">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api-reference.html#earth_data_kit.stitching.DataSet"><code class="docutils literal notranslate"><span class="pre">DataSet</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api-reference.html#earth_data_kit.stitching.DataSet.set_timebounds"><code class="docutils literal notranslate"><span class="pre">DataSet.set_timebounds()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="api-reference.html#earth_data_kit.stitching.DataSet.set_spacebounds"><code class="docutils literal notranslate"><span class="pre">DataSet.set_spacebounds()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="api-reference.html#earth_data_kit.stitching.DataSet.get_distinct_bands"><code class="docutils literal notranslate"><span class="pre">DataSet.get_distinct_bands()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="api-reference.html#earth_data_kit.stitching.DataSet.sync"><code class="docutils literal notranslate"><span class="pre">DataSet.sync()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="api-reference.html#earth_data_kit.stitching.DataSet.to_cog"><code class="docutils literal notranslate"><span class="pre">DataSet.to_cog()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="api-reference.html#earth_data_kit.stitching.DataSet.to_zarr"><code class="docutils literal notranslate"><span class="pre">DataSet.to_zarr()</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="api-reference.html#earth_data_kit.stitching.Dataset"><code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -350,6 +363,8 @@
             <ul>
 <li><a class="reference internal" href="#">Earth Data Kit</a><ul>
 <li><a class="reference internal" href="#modules">Modules</a></li>
+<li><a class="reference internal" href="#input-data-sources">Input Data Sources</a></li>
+<li><a class="reference internal" href="#output-formats">Output Formats</a></li>
 <li><a class="reference internal" href="#contents">Contents</a></li>
 </ul>
 </li>
@@ -362,9 +377,11 @@
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=a264681e"></script>
+</div><script src="_static/documentation_options.js?v=12131f25"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
     </body>
 </html>

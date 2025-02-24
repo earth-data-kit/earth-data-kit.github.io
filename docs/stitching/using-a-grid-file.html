@@ -3,13 +3,15 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Without a grid file" href="without-a-grid-file.html" /><link rel="prev" title="Defining source" href="defining-source.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Without a Grid File" href="without-a-grid-file.html" /><link rel="prev" title="Defining Source" href="defining-source.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>Using a grid file - Earth Data Kit 1.0.0-alpha documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+        <title>Using a Grid File - Earth Data Kit 1.0.0-alpha2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=0bffc54f" />
     
     
 
@@ -166,7 +168,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">Earth Data Kit 1.0.0-alpha documentation</div></a>
+      <a href="../index.html"><div class="brand">Earth Data Kit 1.0.0-alpha2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -190,7 +192,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">Earth Data Kit 1.0.0-alpha documentation</span>
+  <span class="sidebar-brand-text">Earth Data Kit 1.0.0-alpha2 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -201,11 +203,17 @@
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../stitching.html">Stitching</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Stitching</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="defining-source.html">Defining source</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Using a grid file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="without-a-grid-file.html">Without a grid file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="defining-source.html">Defining Source</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Using a Grid File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="without-a-grid-file.html">Without a Grid File</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/s3.html">AWS S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/earth_engine.html">Google Earth Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api-reference.html">API Reference</a></li>
 </ul>
 
@@ -248,70 +256,72 @@
         </div>
         <article role="main" id="furo-main-content">
           <section id="using-a-grid-file">
-<h1>Using a grid file<a class="headerlink" href="#using-a-grid-file" title="Link to this heading">¶</a></h1>
-<p>Grid file is a kml or shapefile which contains a mapping of data provider’s grid to world coordinates.</p>
-<p>It contains a <code class="docutils literal notranslate"><span class="pre">Name</span></code> column and a <code class="docutils literal notranslate"><span class="pre">geometry</span></code> which contains a mapping between <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> of satellite grid to bounding boxes in world coordinates. This file can be used to create a set of patterns,
-which then is used to search for scene files.</p>
+<h1>Using a Grid File<a class="headerlink" href="#using-a-grid-file" title="Link to this heading">¶</a></h1>
+<p>A grid file is typically a KML or Shapefile that maps a data provider’s grid system to global coordinates.</p>
+<p>Such a file usually includes a “Name” column to identify each grid cell and a “geometry” column that defines the corresponding bounding box in world coordinates.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This is the advised method as using the grid file we can pinpoint exactly which files to download and stitch together</p>
+<p>By using a grid file, you can generate targeted search patterns that precisely identify the scene files you need. This is the recommended approach because it allows you to download and stitch together only the relevant files.</p>
 </div>
-<p>As an example we will trying to create COGs from modis scene files kept on S3.
-We will try to download data for Albania for 1st month of Jan, 2017.</p>
-<p>Before moving ahead it’s important to go through <a class="reference internal" href="defining-source.html#defining-source"><span class="std std-ref">Defining source</span></a></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">earth_data_kit</span> <span class="k">as</span> <span class="nn">edk</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
+<p>The example below demonstrates how to create Cloud Optimized GeoTIFFs (COGs) from MODIS scene files stored on S3 by selecting data for Albania during January 2017.</p>
+<p>Before proceeding, please review the <a class="reference internal" href="defining-source.html#defining-source"><span class="std std-ref">Defining Source</span></a> section for details on how to define your source pattern.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">earth_data_kit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">edk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 
-<span class="c1"># Derived from path of a single scene file</span>
+<span class="c1"># Define the source file pattern with placeholders for horizontal (h) and vertical (v)</span>
+<span class="c1"># grid indices. These placeholders will be dynamically populated using the grid file.</span>
 <span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;s3://modis-pds/MCD43A4.006/</span><span class="si">{h}</span><span class="s2">/</span><span class="si">{v}</span><span class="s2">/%Y%j/*_B07.TIF&quot;</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">edk</span><span class="o">.</span><span class="n">stitching</span><span class="o">.</span><span class="n">DataSet</span><span class="p">(</span><span class="s2">&quot;modis-pds&quot;</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="s2">&quot;s3&quot;</span><span class="p">)</span>
-<span class="n">grid_fp</span> <span class="o">=</span> <span class="s2">&quot;tests/fixtures/modis.kml&quot;</span>
-<span class="c1"># Modis Data is at a daily frequency so we create one COG per day</span>
-<span class="n">destination</span> <span class="o">=</span> <span class="s2">&quot;/&lt;local_path&gt;/earth-data-kit/final/modis-pds/</span><span class="si">%d</span><span class="s2">-%m-%Y-b07.TIF&quot;</span>
 
-<span class="c1"># As an example we will use Albania&#39;s bounding box and get data for the month of January 2017 from s3://modis-pds/MCD43A4.006/</span>
+<span class="c1"># Create a Dataset instance using the S3 engine.</span>
+<span class="c1"># &quot;modis-pds&quot; serves as an identifier for the dataset.</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">edk</span><span class="o">.</span><span class="n">stitching</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s2">&quot;modis-pds&quot;</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="s2">&quot;s3&quot;</span><span class="p">)</span>
+
+<span class="c1"># Specify the path to the grid file. This file (e.g., a KML) maps the provider&#39;s grid system</span>
+<span class="c1"># to global coordinates, allowing targeted file selection.</span>
+<span class="n">grid_file</span> <span class="o">=</span> <span class="s2">&quot;tests/fixtures/modis.kml&quot;</span>
+
+<span class="c1"># Define the spatial bounding box for Albania.</span>
+<span class="c1"># Format: (min_longitude, min_latitude, max_longitude, max_latitude)</span>
 <span class="n">bbox</span> <span class="o">=</span> <span class="p">(</span><span class="mf">19.3044861183</span><span class="p">,</span> <span class="mf">39.624997667</span><span class="p">,</span> <span class="mf">21.0200403175</span><span class="p">,</span> <span class="mf">42.6882473822</span><span class="p">)</span>
-<span class="n">date_range</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">),</span>
-<span class="p">)</span>  <span class="c1"># (Start, End) - End date is inclusive</span>
 
-<span class="c1"># Setting time bounds</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">set_timebounds</span><span class="p">(</span><span class="n">date_range</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">date_range</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1"># Define the temporal range for January 2017 (end date inclusive).</span>
+<span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">end_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_timebounds</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">)</span>
 
 
-<span class="c1"># To get the h and v components from file path we need to define a</span>
-<span class="c1"># lambda function which can extract h and v from the grid dataframe as a dictionary</span>
-<span class="c1"># Example below</span>
-<span class="k">def</span> <span class="nf">fn</span><span class="p">(</span><span class="n">df_row</span><span class="p">):</span>
-    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;h:(\d*) v:(\d*)&quot;</span><span class="p">,</span> <span class="n">df_row</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">match</span> <span class="ow">and</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">():</span>
-        <span class="nb">vars</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+<span class="c1"># Define a function to extract grid components (horizontal &#39;h&#39; and vertical &#39;v&#39;)</span>
+<span class="c1"># from a row in the grid file. The function expects the row&#39;s &#39;Name&#39; attribute to contain</span>
+<span class="c1"># a string in the format &quot;h:&lt;number&gt; v:&lt;number&gt;&quot;.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">extract_grid_components</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extracts grid indices from a grid file row.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        row: An object representing a row from the grid file, which must include a &#39;Name&#39; attribute.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A dictionary with grid identifiers &#39;h&#39; and &#39;v&#39;, formatted as two-digit strings.</span>
+<span class="sd">              Example: {&#39;h&#39;: &#39;01&#39;, &#39;v&#39;: &#39;08&#39;}</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;h:(\d+)\s+v:(\d+)&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">{</span>
-            <span class="s2">&quot;h&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="nb">vars</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="nb">vars</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;h&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
         <span class="p">}</span>
+    <span class="k">return</span> <span class="p">{}</span>
 
 
-<span class="c1"># Setting spatial bounds. We pass the bbox we are interested in,</span>
-<span class="c1"># grid file path and the lambda function to extract h and v from the grid file</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">set_spacebounds</span><span class="p">(</span><span class="n">bbox</span><span class="p">,</span> <span class="n">grid_fp</span><span class="p">,</span> <span class="n">fn</span><span class="p">)</span>
+<span class="c1"># Configure the spatial bounds with the bounding box, grid file, and grid extraction function.</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_spacebounds</span><span class="p">(</span><span class="n">bbox</span><span class="p">,</span> <span class="n">grid_file</span><span class="p">,</span> <span class="n">extract_grid_components</span><span class="p">)</span>
 
-<span class="c1"># Getting distinct bands. This will help us decide band arrangement when stitching scenes together</span>
-<span class="n">bands</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_distinct_bands</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">bands</span><span class="p">)</span>
+<span class="c1"># Runs the discovery process to find the scene files that match the specified spatial and temporal constraints.</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">discover</span><span class="p">()</span>
 
-<span class="c1"># Downloading scene files</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">sync</span><span class="p">()</span>
-
-<span class="c1"># Finally stitching them together with the band arrangement as below</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">to_cog</span><span class="p">(</span>
-    <span class="n">destination</span><span class="p">,</span>
-    <span class="n">bands</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">&quot;Nadir_Reflectance_Band7&quot;</span><span class="p">,</span>
-    <span class="p">],</span>
-<span class="p">)</span>
+<span class="c1"># Stitches the scene files into VRTs using the defined band arrangement.</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">to_vrts</span><span class="p">(</span><span class="n">bands</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Nadir_Reflectance_Band7&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </section>
@@ -326,7 +336,7 @@ We will try to download data for Albania for 1st month of Jan, 2017.</p>
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Without a grid file</div>
+                <div class="title">Without a Grid File</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -337,7 +347,7 @@ We will try to download data for Albania for 1st month of Jan, 2017.</p>
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Defining source</div>
+                <div class="title">Defining Source</div>
                 
               </div>
             </a>
@@ -365,9 +375,11 @@ We will try to download data for Albania for 1st month of Jan, 2017.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=a264681e"></script>
+</div><script src="../_static/documentation_options.js?v=12131f25"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
     </body>
 </html>

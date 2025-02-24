@@ -4,10 +4,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
 
-    <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 --><title>Index - Earth Data Kit 1.0.0-alpha documentation</title>
-<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 --><title>Index - Earth Data Kit 1.0.0-alpha2 documentation</title>
+<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=0bffc54f" />
     
     
 
@@ -164,7 +166,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Earth Data Kit 1.0.0-alpha documentation</div></a>
+      <a href="index.html"><div class="brand">Earth Data Kit 1.0.0-alpha2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -188,7 +190,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">Earth Data Kit 1.0.0-alpha documentation</span>
+  <span class="sidebar-brand-text">Earth Data Kit 1.0.0-alpha2 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -199,11 +201,17 @@
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="stitching.html">Stitching</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Stitching</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="stitching/defining-source.html">Defining source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stitching/using-a-grid-file.html">Using a grid file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stitching/without-a-grid-file.html">Without a grid file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stitching/defining-source.html">Defining Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stitching/using-a-grid-file.html">Using a Grid File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stitching/without-a-grid-file.html">Without a Grid File</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/s3.html">AWS S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/earth_engine.html">Google Earth Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api-reference.html">API Reference</a></li>
 </ul>
 
@@ -248,7 +256,11 @@
   <h2>D</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="api-reference.html#earth_data_kit.stitching.DataSet">DataSet (class in earth_data_kit.stitching)</a>
+        <li><a href="api-reference.html#earth_data_kit.stitching.Dataset">Dataset (class in earth_data_kit.stitching)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api-reference.html#earth_data_kit.stitching.Dataset.discover">discover() (earth_data_kit.stitching.Dataset method)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -258,7 +270,7 @@
   <h2>G</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="api-reference.html#earth_data_kit.stitching.DataSet.get_distinct_bands">get_distinct_bands() (earth_data_kit.stitching.DataSet method)</a>
+        <li><a href="api-reference.html#earth_data_kit.stitching.Dataset.get_bands">get_bands() (earth_data_kit.stitching.Dataset method)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -268,13 +280,13 @@
   <h2>S</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="api-reference.html#earth_data_kit.stitching.DataSet.set_spacebounds">set_spacebounds() (earth_data_kit.stitching.DataSet method)</a>
+        <li><a href="api-reference.html#earth_data_kit.stitching.Dataset.set_gdal_options">set_gdal_options() (earth_data_kit.stitching.Dataset method)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="api-reference.html#earth_data_kit.stitching.DataSet.set_timebounds">set_timebounds() (earth_data_kit.stitching.DataSet method)</a>
+        <li><a href="api-reference.html#earth_data_kit.stitching.Dataset.set_spacebounds">set_spacebounds() (earth_data_kit.stitching.Dataset method)</a>
 </li>
-        <li><a href="api-reference.html#earth_data_kit.stitching.DataSet.sync">sync() (earth_data_kit.stitching.DataSet method)</a>
+        <li><a href="api-reference.html#earth_data_kit.stitching.Dataset.set_timebounds">set_timebounds() (earth_data_kit.stitching.Dataset method)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -284,11 +296,7 @@
   <h2>T</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="api-reference.html#earth_data_kit.stitching.DataSet.to_cog">to_cog() (earth_data_kit.stitching.DataSet method)</a>
-</li>
-    </ul></td>
-    <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="api-reference.html#earth_data_kit.stitching.DataSet.to_zarr">to_zarr() (earth_data_kit.stitching.DataSet method)</a>
+        <li><a href="api-reference.html#earth_data_kit.stitching.Dataset.to_vrts">to_vrts() (earth_data_kit.stitching.Dataset method)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -326,9 +334,11 @@
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=a264681e"></script>
+</div><script src="_static/documentation_options.js?v=12131f25"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
     </body>
 </html>
