@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Roadmap" href="roadmap.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>API Reference - Earth Data Kit 1.0.0-alpha2 documentation</title>
+        <title>API Reference - Earth Data Kit 0.1.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -168,7 +168,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Earth Data Kit 1.0.0-alpha2 documentation</div></a>
+      <a href="index.html"><div class="brand">Earth Data Kit 0.1.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -192,7 +192,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">Earth Data Kit 1.0.0-alpha2 documentation</span>
+  <span class="sidebar-brand-text">Earth Data Kit 0.1.1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -489,6 +489,37 @@ is specified). These single-band VRTs are then mosaiced per band and finally sta
 </div>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="earth_data_kit.stitching.Dataset.to_dataarray">
+<span class="sig-name descname"><span class="pre">to_dataarray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.Dataset.to_dataarray" title="Link to this definition">¶</a></dt>
+<dd><p>Converts the dataset to an xarray DataArray.</p>
+<p>This method opens the VRT file created by <cite>to_vrts()</cite> using xarray with the ‘edk_dataset’ engine
+and returns the DataArray corresponding to this dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A DataArray containing the dataset’s data with dimensions for time, bands,
+and spatial coordinates.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>xarray.DataArray</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">earth_data_kit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">edk</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">edk</span><span class="o">.</span><span class="n">stitching</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s2">&quot;example_dataset&quot;</span><span class="p">,</span> <span class="s2">&quot;s3://your-bucket/path&quot;</span><span class="p">,</span> <span class="s2">&quot;s3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_timebounds</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">discover</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">to_vrts</span><span class="p">(</span><span class="n">bands</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data_array</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">to_dataarray</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method requires that <cite>to_vrts()</cite> has been called first to generate the VRT file.</p>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -514,7 +545,7 @@ is specified). These single-band VRTs are then mosaiced per band and finally sta
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2024, Siddhant Gupta
+                Copyright &#169; 2025, Siddhant Gupta
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -548,6 +579,7 @@ is specified). These single-band VRTs are then mosaiced per band and finally sta
 <li><a class="reference internal" href="#earth_data_kit.stitching.Dataset.discover"><code class="docutils literal notranslate"><span class="pre">Dataset.discover()</span></code></a></li>
 <li><a class="reference internal" href="#earth_data_kit.stitching.Dataset.get_bands"><code class="docutils literal notranslate"><span class="pre">Dataset.get_bands()</span></code></a></li>
 <li><a class="reference internal" href="#earth_data_kit.stitching.Dataset.to_vrts"><code class="docutils literal notranslate"><span class="pre">Dataset.to_vrts()</span></code></a></li>
+<li><a class="reference internal" href="#earth_data_kit.stitching.Dataset.to_dataarray"><code class="docutils literal notranslate"><span class="pre">Dataset.to_dataarray()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -561,7 +593,7 @@ is specified). These single-band VRTs are then mosaiced per band and finally sta
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=12131f25"></script>
+</div><script src="_static/documentation_options.js?v=a58bc63e"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
