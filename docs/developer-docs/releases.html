@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Without a Grid File" href="without-a-grid-file.html" /><link rel="prev" title="Defining Source" href="defining-source.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="API Reference" href="../api-reference.html" /><link rel="prev" title="Developer Docs" href="../developer-docs.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>Using a Grid File - Earth Data Kit 0.1.0 documentation</title>
+        <title>Release Process - Earth Data Kit 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -180,7 +180,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -202,10 +202,10 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../stitching.html">Stitching</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Stitching</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="defining-source.html">Defining Source</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Using a Grid File</a></li>
-<li class="toctree-l2"><a class="reference internal" href="without-a-grid-file.html">Without a Grid File</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../stitching.html">Stitching</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Stitching</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../stitching/defining-source.html">Defining Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stitching/using-a-grid-file.html">Using a Grid File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stitching/without-a-grid-file.html">Without a Grid File</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -214,8 +214,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../developer-docs.html">Developer Docs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Developer Docs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../developer-docs/releases.html">Release Process</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../developer-docs.html">Developer Docs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Developer Docs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Release Process</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api-reference.html">API Reference</a></li>
@@ -239,7 +239,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/stitching/using-a-grid-file.rst.txt" title="View this page">
+  <a class="muted-link" href="../_sources/developer-docs/releases.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -253,81 +253,128 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="using-a-grid-file">
-<h1>Using a Grid File<a class="headerlink" href="#using-a-grid-file" title="Link to this heading">¶</a></h1>
-<p>A grid file is typically a KML or Shapefile that maps a data provider’s grid system to global coordinates.</p>
-<p>Such a file usually includes a “Name” column to identify each grid cell and a “geometry” column that defines the corresponding bounding box in world coordinates.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>By using a grid file, you can generate targeted search patterns that precisely identify the scene files you need. This is the recommended approach because it allows you to download and stitch together only the relevant files.</p>
-</div>
-<p>The example below demonstrates how to create Cloud Optimized GeoTIFFs (COGs) from MODIS scene files stored on S3 by selecting data for Albania during January 2017.</p>
-<p>Before proceeding, please review the <a class="reference internal" href="defining-source.html#defining-source"><span class="std std-ref">Defining Source</span></a> section for details on how to define your source pattern.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">earth_data_kit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">edk</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
-
-<span class="c1"># Define the source file pattern with placeholders for horizontal (h) and vertical (v)</span>
-<span class="c1"># grid indices. These placeholders will be dynamically populated using the grid file.</span>
-<span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;s3://modis-pds/MCD43A4.006/</span><span class="si">{h}</span><span class="s2">/</span><span class="si">{v}</span><span class="s2">/%Y%j/*_B07.TIF&quot;</span>
-
-<span class="c1"># Create a Dataset instance using the S3 engine.</span>
-<span class="c1"># &quot;modis-pds&quot; serves as an identifier for the dataset.</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">edk</span><span class="o">.</span><span class="n">stitching</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s2">&quot;modis-pds&quot;</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="s2">&quot;s3&quot;</span><span class="p">)</span>
-
-<span class="c1"># Specify the path to the grid file. This file (e.g., a KML) maps the provider&#39;s grid system</span>
-<span class="c1"># to global coordinates, allowing targeted file selection.</span>
-<span class="n">grid_file</span> <span class="o">=</span> <span class="s2">&quot;tests/fixtures/modis.kml&quot;</span>
-
-<span class="c1"># Define the spatial bounding box for Albania.</span>
-<span class="c1"># Format: (min_longitude, min_latitude, max_longitude, max_latitude)</span>
-<span class="n">bbox</span> <span class="o">=</span> <span class="p">(</span><span class="mf">19.3044861183</span><span class="p">,</span> <span class="mf">39.624997667</span><span class="p">,</span> <span class="mf">21.0200403175</span><span class="p">,</span> <span class="mf">42.6882473822</span><span class="p">)</span>
-
-<span class="c1"># Define the temporal range for January 2017 (end date inclusive).</span>
-<span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">end_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">set_timebounds</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">)</span>
-
-
-<span class="c1"># Define a function to extract grid components (horizontal &#39;h&#39; and vertical &#39;v&#39;)</span>
-<span class="c1"># from a row in the grid file. The function expects the row&#39;s &#39;Name&#39; attribute to contain</span>
-<span class="c1"># a string in the format &quot;h:&lt;number&gt; v:&lt;number&gt;&quot;.</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">extract_grid_components</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Extracts grid indices from a grid file row.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        row: An object representing a row from the grid file, which must include a &#39;Name&#39; attribute.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        dict: A dictionary with grid identifiers &#39;h&#39; and &#39;v&#39;, formatted as two-digit strings.</span>
-<span class="sd">              Example: {&#39;h&#39;: &#39;01&#39;, &#39;v&#39;: &#39;08&#39;}</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;h:(\d+)\s+v:(\d+)&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="s2">&quot;h&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-        <span class="p">}</span>
-    <span class="k">return</span> <span class="p">{}</span>
-
-
-<span class="c1"># Configure the spatial bounds with the bounding box, grid file, and grid extraction function.</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">set_spacebounds</span><span class="p">(</span><span class="n">bbox</span><span class="p">,</span> <span class="n">grid_file</span><span class="p">,</span> <span class="n">extract_grid_components</span><span class="p">)</span>
-
-<span class="c1"># Runs the discovery process to find the scene files that match the specified spatial and temporal constraints.</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">discover</span><span class="p">()</span>
-
-<span class="c1"># Stitches the scene files into VRTs using the defined band arrangement.</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">to_vrts</span><span class="p">(</span><span class="n">bands</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Nadir_Reflectance_Band7&quot;</span><span class="p">])</span>
+          <section id="release-process">
+<h1>Release Process<a class="headerlink" href="#release-process" title="Link to this heading">¶</a></h1>
+<p>This document outlines the process for creating and publishing new releases of Earth Data Kit. Earth Data Kit versioning starts from 0.1.0 and follows a straightforward versioning scheme. We don’t use alpha or beta releases in our versioning strategy.</p>
+<section id="version-numbering">
+<h2>Version Numbering<a class="headerlink" href="#version-numbering" title="Link to this heading">¶</a></h2>
+<p>Earth Data Kit follows <a class="reference external" href="https://semver.org/">Semantic Versioning</a> (SemVer):</p>
+<ul class="simple">
+<li><p><strong>MAJOR</strong> version for incompatible API changes</p></li>
+<li><p><strong>MINOR</strong> version for backward-compatible functionality additions</p></li>
+<li><p><strong>PATCH</strong> version for backward-compatible bug fixes</p></li>
+</ul>
+<p>The current version is maintained in <code class="docutils literal notranslate"><span class="pre">earth_data_kit/__init__.py</span></code> as the <code class="docutils literal notranslate"><span class="pre">__version__</span></code> variable.</p>
+</section>
+<section id="planning-the-release">
+<h2>Planning the Release<a class="headerlink" href="#planning-the-release" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p><strong>Development Workflow</strong></p>
+<ul class="simple">
+<li><p>All development work happens on the <code class="docutils literal notranslate"><span class="pre">dev</span></code> branch</p></li>
+<li><p>Features and fixes are developed in feature branches and merged into <code class="docutils literal notranslate"><span class="pre">dev</span></code></p></li>
+<li><p>Code reviews and tests are performed before merging into <code class="docutils literal notranslate"><span class="pre">dev</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Release Branch Creation</strong></p>
+<ul>
+<li><p>When approaching a planned release, create a release branch from <code class="docutils literal notranslate"><span class="pre">dev</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>dev
+<span class="gp">$ </span>git<span class="w"> </span>pull
+<span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>release/vX.Y.Z
 </pre></div>
 </div>
+</li>
+<li><p>The release branch is used to prepare and stabilize the release</p></li>
+<li><p>Only bug fixes and release-specific changes should be made on this branch</p></li>
+<li><p>Any changes made to the release branch must be merged back to <code class="docutils literal notranslate"><span class="pre">dev</span></code> after release</p></li>
+</ul>
+</li>
+<li><p><strong>Release Preparation</strong></p>
+<ul>
+<li><p>Finalize features and fixes for the release</p></li>
+<li><p>Update version using Poetry:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>poetry<span class="w"> </span>version<span class="w"> </span><span class="o">[</span>major<span class="p">|</span>minor<span class="p">|</span>patch<span class="o">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>Make sure all documentation is updated to reflect the new version</p></li>
+<li><p>Ensure all tests are passing:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>make<span class="w"> </span>run-tests
+</pre></div>
+</div>
+</li>
+<li><p>Update the changelog with all notable changes</p></li>
+<li><p>Merge all changes to the <code class="docutils literal notranslate"><span class="pre">dev</span></code> branch</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="release-checklist">
+<h2>Release Checklist<a class="headerlink" href="#release-checklist" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p><strong>Finalize the Release</strong></p>
+<ul>
+<li><p>Create a pull request to merge the <code class="docutils literal notranslate"><span class="pre">dev</span></code> branch to <code class="docutils literal notranslate"><span class="pre">master</span></code>:
+1. Create the pull request with a descriptive title and details about the release
+2. Make sure all tests pass
+3. Once approved, merge the pull request</p></li>
+<li><p>Lock the release branch to prevent further changes</p></li>
+<li><p>Checkout the master branch for release:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>master
+<span class="gp">$ </span>git<span class="w"> </span>pull
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Build and Release the Package and Documentation</strong></p>
+<ul>
+<li><p>Clean the build environment:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>rm<span class="w"> </span>-rf<span class="w"> </span>build/<span class="w"> </span>dist/
+</pre></div>
+</div>
+</li>
+<li><p>Build the package:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>make<span class="w"> </span>build
+</pre></div>
+</div>
+</li>
+<li><p>Install the built package to ensure documentation builds with the latest code:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>make<span class="w"> </span>install-package
+</pre></div>
+</div>
+</li>
+<li><p>Build the documentation:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>make<span class="w"> </span>build-docs
+</pre></div>
+</div>
+</li>
+<li><p>Release both the package and documentation using the tag. Note that the tag is the version number without the <code class="docutils literal notranslate"><span class="pre">v</span></code> prefix:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nv">TAG</span><span class="o">=</span>X.Y.Z<span class="w"> </span>make<span class="w"> </span>release
+<span class="gp">$ </span><span class="nv">TAG</span><span class="o">=</span>X.Y.Z<span class="w"> </span>make<span class="w"> </span>release-docs
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple" start="4">
+<li><p><strong>Announce the Release</strong></p>
+<ul class="simple">
+<li><p>Notify the team and users about the new release</p></li>
+<li><p>Include a link to the changelog</p></li>
+<li><p>Highlight key features, improvements, and bug fixes</p></li>
+</ul>
+</li>
+</ol>
+</section>
 </section>
 
         </article>
@@ -335,23 +382,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="without-a-grid-file.html">
+          <a class="next-page" href="../api-reference.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Without a Grid File</div>
+                <div class="title">API Reference</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="defining-source.html">
+          <a class="prev-page" href="../developer-docs.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Defining Source</div>
+                <div class="title">Developer Docs</div>
                 
               </div>
             </a>
@@ -373,8 +420,29 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Release Process</a><ul>
+<li><a class="reference internal" href="#version-numbering">Version Numbering</a></li>
+<li><a class="reference internal" href="#planning-the-release">Planning the Release</a></li>
+<li><a class="reference internal" href="#release-checklist">Release Checklist</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

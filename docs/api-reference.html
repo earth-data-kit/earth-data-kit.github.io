@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Roadmap" href="roadmap.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Release Process" href="developer-docs/releases.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>API Reference - Earth Data Kit 0.1.1 documentation</title>
+        <title>API Reference - Earth Data Kit 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -168,7 +168,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Earth Data Kit 0.1.1 documentation</div></a>
+      <a href="contents.html"><div class="brand">Earth Data Kit 0.1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -189,10 +189,10 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="contents.html">
   
   
-  <span class="sidebar-brand-text">Earth Data Kit 0.1.1 documentation</span>
+  <span class="sidebar-brand-text">Earth Data Kit 0.1.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -214,6 +214,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="developer-docs.html">Developer Docs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Developer Docs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer-docs/releases.html">Release Process</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">API Reference</a></li>
 </ul>
 
@@ -331,21 +335,10 @@ for matching scene file paths. Defaults to None.</p></li>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">earth_data_kit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">edk</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">edk</span><span class="o">.</span><span class="n">stitching</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s2">&quot;example_dataset&quot;</span><span class="p">,</span> <span class="s2">&quot;s3://your-bucket/path&quot;</span><span class="p">,</span> <span class="s2">&quot;s3&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Setting spatial bounds using only a bounding box:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Setting spatial bounds using a bounding box:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_spacebounds</span><span class="p">((</span><span class="mf">19.3044861183</span><span class="p">,</span> <span class="mf">39.624997667</span><span class="p">,</span> <span class="mf">21.0200403175</span><span class="p">,</span> <span class="mf">42.6882473822</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Setting spatial bounds with a grid file and a matcher function:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">extract_grid_components</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
-<span class="gp">... </span>    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;h:(\d+)\s+v:(\d+)&quot;</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
-<span class="gp">... </span>        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;h&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
-<span class="gp">... </span>    <span class="k">return</span> <span class="p">{}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_spacebounds</span><span class="p">(</span>
-<span class="gp">... </span>    <span class="p">(</span><span class="mf">19.3044861183</span><span class="p">,</span> <span class="mf">39.624997667</span><span class="p">,</span> <span class="mf">21.0200403175</span><span class="p">,</span> <span class="mf">42.6882473822</span><span class="p">),</span>
-<span class="gp">... </span>    <span class="n">grid_file</span><span class="o">=</span><span class="s2">&quot;path/to/grid.kml&quot;</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="n">matcher</span><span class="o">=</span><span class="n">extract_grid_components</span>
-<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># For more examples, please refer to the edk-examples repository</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -491,17 +484,20 @@ is specified). These single-band VRTs are then mosaiced per band and finally sta
 
 <dl class="py method">
 <dt class="sig sig-object py" id="earth_data_kit.stitching.Dataset.to_dataarray">
-<span class="sig-name descname"><span class="pre">to_dataarray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.Dataset.to_dataarray" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_dataarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#earth_data_kit.stitching.Dataset.to_dataarray" title="Link to this definition">¶</a></dt>
 <dd><p>Converts the dataset to an xarray DataArray.</p>
 <p>This method opens the VRT file created by <cite>to_vrts()</cite> using xarray with the ‘edk_dataset’ engine
 and returns the DataArray corresponding to this dataset.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A DataArray containing the dataset’s data with dimensions for time, bands,
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>xml_path</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to the XML file to open. If not provided, uses the XML path from the most recent <cite>to_vrts()</cite> call.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataArray containing the dataset’s data with dimensions for time, bands,
 and spatial coordinates.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>xarray.DataArray</p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>xarray.DataArray</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
@@ -516,7 +512,7 @@ and spatial coordinates.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This method requires that <cite>to_vrts()</cite> has been called first to generate the VRT file.</p>
+<p>This method requires that <cite>to_vrts()</cite> has been called first to generate the VRT file, unless a custom XML path is provided.</p>
 </div>
 </dd></dl>
 
@@ -530,14 +526,14 @@ and spatial coordinates.</p>
         
         <div class="related-pages">
           
-          <a class="prev-page" href="roadmap.html">
+          <a class="prev-page" href="developer-docs/releases.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Roadmap</div>
+                <div class="title">Release Process</div>
                 
               </div>
             </a>
@@ -593,7 +589,7 @@ and spatial coordinates.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=a58bc63e"></script>
+</div><script src="_static/documentation_options.js?v=01f34227"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
