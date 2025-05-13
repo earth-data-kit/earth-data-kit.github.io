@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Roadmap" href="../roadmap.html" /><link rel="prev" title="AWS S3" href="s3.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Developer Docs" href="../developer-docs.html" /><link rel="prev" title="Releases" href="../releases.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>Google Earth Engine - Earth Data Kit 0.1.2 documentation</title>
+        <title>EDK v0.1.2 Alpha Release - Earth Data Kit 0.1.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -180,7 +180,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -211,14 +211,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../stitching/without-a-grid-file.html">Without a Grid File</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../examples.html">Examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="s3.html">AWS S3</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Google Earth Engine</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/s3.html">AWS S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/earth_engine.html">Google Earth Engine</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../releases.html">Releases</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Releases</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../releases/v0.1.2.html">EDK v0.1.2 Alpha Release</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../releases.html">Releases</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Releases</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">EDK v0.1.2 Alpha Release</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../developer-docs.html">Developer Docs</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Developer Docs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -250,7 +250,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/examples/earth_engine.rst.txt" title="View this page">
+  <a class="muted-link" href="../_sources/releases/v0.1.2.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -264,55 +264,141 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="google-earth-engine">
-<h1>Google Earth Engine<a class="headerlink" href="#google-earth-engine" title="Link to this heading">¶</a></h1>
-<p>This example demonstrates how to use the Earth Data Kit to stitch together a Earth Engine collection.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">earth_data_kit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">edk</span>
-
-<span class="c1"># Initialize the Dataset using the Earth Engine.</span>
-<span class="n">dataset_id</span> <span class="o">=</span> <span class="s2">&quot;example_earth_engine_dataset&quot;</span>
-<span class="c1"># Replace with your actual Earth Engine collection ID (e.g., LANDSAT/LC08/C01/T1_SR).</span>
-<span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;LANDSAT/LC08/C01/T1_SR&quot;</span>
-<span class="n">engine</span> <span class="o">=</span> <span class="s2">&quot;earth_engine&quot;</span>
-
-<span class="n">ds</span> <span class="o">=</span> <span class="n">edk</span><span class="o">.</span><span class="n">stitching</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
-
-<span class="c1"># Set the time bounds for the dataset.</span>
-<span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">end_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">set_timebounds</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">)</span>
-
-<span class="c1"># Define the spatial bounding box (min_lon, min_lat, max_lon, max_lat)</span>
-<span class="n">bbox</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">122.75</span><span class="p">,</span> <span class="mf">36.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">121.75</span><span class="p">,</span> <span class="mf">37.8</span><span class="p">)</span>
-
-<span class="c1"># For Earth Engine collections, grid files are not needed.</span>
-<span class="c1"># Passing None for both grid file and extraction function.</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">set_spacebounds</span><span class="p">(</span><span class="n">bbox</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-
-<span class="c1"># Discover the available images within the specified temporal and spatial bounds.</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">discover</span><span class="p">()</span>
-
-<span class="c1"># Optionally, configure GDAL options (e.g., setting the target spatial reference).</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">set_target_options</span><span class="p">({</span>
-    <span class="s2">&quot;-t_srs&quot;</span><span class="p">:</span> <span class="s2">&quot;EPSG:3857&quot;</span><span class="p">,</span>
-<span class="p">})</span>
-
-<span class="c1"># Define the ordered list of band descriptions you wish to stitch together.</span>
-<span class="n">bands</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;B4&quot;</span><span class="p">,</span> <span class="s2">&quot;B3&quot;</span><span class="p">,</span> <span class="s2">&quot;B2&quot;</span><span class="p">]</span>
-
-<span class="c1"># Create the stitched VRTs from the provided Earth Engine data.</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">mosaic</span><span class="p">(</span><span class="n">bands</span><span class="p">)</span>
-
-<span class="c1"># This returns a dataarray with the stitched bands</span>
-<span class="n">da</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">to_dataarray</span><span class="p">()</span>
-</pre></div>
+          <section id="edk-v0-1-2-alpha-release">
+<h1>EDK v0.1.2 Alpha Release<a class="headerlink" href="#edk-v0-1-2-alpha-release" title="Link to this heading">¶</a></h1>
+<p>Release Date: 2025-05-04</p>
+<p>Version: Alpha (v0.1.2)</p>
+<p>Author: Earth Data Kit Team</p>
+<hr class="docutils" />
+<section id="what-s-new">
+<h2>🚀 What’s New<a class="headerlink" href="#what-s-new" title="Link to this heading">¶</a></h2>
+<p>We’re excited to announce the <strong>first Alpha release of Earth Data Kit (EDK)</strong> — a unified toolkit making working with cloud-based GIS workflows easy.</p>
+<p>The goal of this alpha release is to get a sense of whether something like EDK will be useful for GIS analysis, while working toward creating a seamless experience for geospatial data processing in the cloud. This initial release delivers foundational features focused on working with <strong>4D raster datasets</strong> (<code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">band</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>), built for ease of use and compatibility with the Python geospatial ecosystem.</p>
+<section id="key-highlights">
+<h3>Key Highlights<a class="headerlink" href="#key-highlights" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Cloud-Native Mosaic Creation</strong>
+Stitch rasters from cloud storage like AWS S3 or Google Earth Engine into time-based mosaics.</p></li>
+<li><p><strong>Conversion to</strong> <code class="docutils literal notranslate"><span class="pre">xr.DataArray</span></code>
+Native support for <code class="docutils literal notranslate"><span class="pre">xarray</span></code> and its ecosystem, including easy manipulation and analysis.</p></li>
+<li><p><strong>Built-In Export and Visualization</strong>
+Export to Cloud-Optimized GeoTIFFs and visualize with Folium maps directly from your DataArray.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="core-features">
+<h2>🔧 Core Features<a class="headerlink" href="#core-features" title="Link to this heading">¶</a></h2>
+<section id="cloud-based-stitching-api">
+<h3>1. Cloud-Based Stitching API<a class="headerlink" href="#cloud-based-stitching-api" title="Link to this heading">¶</a></h3>
+<p>Create timestamped mosaics from raster tiles stored in supported cloud storage systems.</p>
+<ul class="simple">
+<li><p><strong>discover()</strong>
+Scans and filters datasets based on spatial and temporal bounds. Returns a catalog of relevant tiles.</p></li>
+<li><p><strong>mosaic()</strong>
+Generates Virtual Raster Tiles (VRTs) for each timestamp using the discovered tiles.</p></li>
+<li><p><strong>save()</strong>
+Saves discovery metadata locally for reuse without re-running the scanning process.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line">✅ Uses GDAL internally so most raster formats should be supported. Testing other formats is on the roadmap.</div>
+<div class="line">✅ Tested with GeoTIFFs on S3 and Earth Engine datasets</div>
 </div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="integration-with-xr-dataarray">
+<h3>2. Integration with <code class="docutils literal notranslate"><span class="pre">xr.DataArray</span></code><a class="headerlink" href="#integration-with-xr-dataarray" title="Link to this heading">¶</a></h3>
+<p>EDK transforms stitched mosaics into <code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code> objects, unlocking advanced processing and visualization with Python libraries.</p>
+<section id="export">
+<h4><code class="docutils literal notranslate"><span class="pre">export()</span></code><a class="headerlink" href="#export" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Export 2D/3D/4D arrays to Cloud-Optimized GeoTIFFs (COGs)</p></li>
+<li><p>Export destinations</p>
+<ul>
+<li><p>Local disk</p></li>
+<li><p>S3 buckets via <code class="docutils literal notranslate"><span class="pre">s5cmd</span></code> (local copy + upload)</p></li>
+</ul>
+</li>
+<li><p>Behavior:</p>
+<ul>
+<li><p>4D: one COG per <code class="docutils literal notranslate"><span class="pre">time</span></code> index (requires output folder)</p></li>
+<li><p>3D &amp; 2D: requires explicit output file path</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="plot">
+<h4><code class="docutils literal notranslate"><span class="pre">plot()</span></code><a class="headerlink" href="#plot" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Renders a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> as an interactive map using Folium’s <code class="docutils literal notranslate"><span class="pre">ImageOverlay</span></code></p></li>
+<li><p>Reads all data into memory and displays it over a map</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Limited by available system memory and Folium’s rendering capacity</p>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="metadata-preservation-work-in-progress">
+<h3>3. Metadata Preservation (Work in Progress)<a class="headerlink" href="#metadata-preservation-work-in-progress" title="Link to this heading">¶</a></h3>
+<p>Operations like <code class="docutils literal notranslate"><span class="pre">.isel()</span></code> or <code class="docutils literal notranslate"><span class="pre">.sel()</span></code> can drop key metadata (e.g., file paths), breaking downstream functions like <code class="docutils literal notranslate"><span class="pre">export()</span></code> and <code class="docutils literal notranslate"><span class="pre">plot()</span></code>. This is the reason why libraries like rioxarray adds CRS in xarray coordinates, eg: spatial_ref</p>
+<section id="planned-solution">
+<h4>Planned Solution<a class="headerlink" href="#planned-solution" title="Link to this heading">¶</a></h4>
+<p>A wrapper class (inspired by <a class="reference external" href="https://github.com/uxarray">uxarray</a>) that:</p>
+<ul class="simple">
+<li><p>Subclasses or wraps <code class="docutils literal notranslate"><span class="pre">xr.DataArray</span></code></p></li>
+<li><p>Retains critical metadata across operations</p></li>
+<li><p>Ensures export/visualization still works after filtering/slicing</p></li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="coming-soon">
+<h2>🔮 Coming Soon<a class="headerlink" href="#coming-soon" title="Link to this heading">¶</a></h2>
+<p>This alpha lays the foundation. Here’s what’s planned for upcoming releases:</p>
+<ul class="simple">
+<li><p><strong>🧩 Additional Data Sources</strong>
+- HTTP(S), STAC APIs, Azure Blob Storage</p></li>
+<li><p><strong>🗺️ Vector Mosaicking</strong>
+- Stitch vector data (with ability to export them to FlatGeobuf)</p></li>
+<li><p><strong>🌡️ Climate Data Format Support</strong>
+- NetCDF, HDF5, and GRIB for atmospheric/oceanographic datasets</p></li>
+<li><p><strong>🧼 Preprocessing Tools</strong>
+- Cloud masking and cloud treatment</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="open-design-questions">
+<h2>❓ Open Design Questions<a class="headerlink" href="#open-design-questions" title="Link to this heading">¶</a></h2>
+<p>We welcome community feedback on:</p>
+<ul class="simple">
+<li><p>What kind of interactive visualizations are important? (e.g., time slicing for an area of interest)</p></li>
+<li><p>How should we retain metadata, usually saved in xarray attributes, across xarray operations?</p></li>
+<li><p>Should metadata be <strong>saved alongside exports</strong> as sidecar files so that the entire time-series can be read without needing to open every file separately?</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="try-it-out">
+<h2>🧪 Try It Out<a class="headerlink" href="#try-it-out" title="Link to this heading">¶</a></h2>
+<p>This Alpha release is ideal for researchers and developers working with cloud-native raster pipelines.</p>
+<ul class="simple">
+<li><p>📦 <strong>Installation:</strong> <em>Coming soon via</em> <code class="docutils literal notranslate"><span class="pre">pip</span></code>, see <a class="reference internal" href="../getting-started.html"><span class="doc">Getting Started</span></a> for current installation instructions</p></li>
+<li><p>🛠️ <strong>GitHub:</strong> &lt;<a class="reference external" href="https://github.com/earth-data-kit/earth-data-kit">https://github.com/earth-data-kit/earth-data-kit</a>&gt;</p></li>
+</ul>
+<hr class="docutils" />
+<p>Have questions or suggestions? Feel free to raise an issue or join the discussions on <a class="reference external" href="https://github.com/earth-data-kit/earth-data-kit/issues">GitHub</a>.</p>
+</section>
 </section>
 
         </article>
@@ -320,23 +406,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../roadmap.html">
+          <a class="next-page" href="../developer-docs.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Roadmap</div>
+                <div class="title">Developer Docs</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="s3.html">
+          <a class="prev-page" href="../releases.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">AWS S3</div>
+                <div class="title">Releases</div>
                 
               </div>
             </a>
@@ -358,8 +444,46 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">EDK v0.1.2 Alpha Release</a><ul>
+<li><a class="reference internal" href="#what-s-new">🚀 What’s New</a><ul>
+<li><a class="reference internal" href="#key-highlights">Key Highlights</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#core-features">🔧 Core Features</a><ul>
+<li><a class="reference internal" href="#cloud-based-stitching-api">1. Cloud-Based Stitching API</a></li>
+<li><a class="reference internal" href="#integration-with-xr-dataarray">2. Integration with <code class="docutils literal notranslate"><span class="pre">xr.DataArray</span></code></a><ul>
+<li><a class="reference internal" href="#export"><code class="docutils literal notranslate"><span class="pre">export()</span></code></a></li>
+<li><a class="reference internal" href="#plot"><code class="docutils literal notranslate"><span class="pre">plot()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#metadata-preservation-work-in-progress">3. Metadata Preservation (Work in Progress)</a><ul>
+<li><a class="reference internal" href="#planned-solution">Planned Solution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#coming-soon">🔮 Coming Soon</a></li>
+<li><a class="reference internal" href="#open-design-questions">❓ Open Design Questions</a></li>
+<li><a class="reference internal" href="#try-it-out">🧪 Try It Out</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

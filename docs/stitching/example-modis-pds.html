@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Roadmap" href="../roadmap.html" /><link rel="prev" title="AWS S3" href="s3.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Using a Grid File" href="using-a-grid-file.html" /><link rel="prev" title="Defining Source" href="defining-source.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>Google Earth Engine - Earth Data Kit 0.1.2 documentation</title>
+        <title>Example: MODIS PDS - Earth Data Kit 0.1.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -202,18 +202,18 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../stitching.html">Stitching</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Stitching</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../stitching/defining-source.html">Defining Source</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Defining Source</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../stitching/example-modis-pds.html">Example: MODIS PDS</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../stitching.html">Stitching</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Stitching</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="defining-source.html">Defining Source</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Defining Source</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Example: MODIS PDS</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../stitching/using-a-grid-file.html">Using a Grid File</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../stitching/without-a-grid-file.html">Without a Grid File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-a-grid-file.html">Using a Grid File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="without-a-grid-file.html">Without a Grid File</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../examples.html">Examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="s3.html">AWS S3</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Google Earth Engine</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/s3.html">AWS S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/earth_engine.html">Google Earth Engine</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
@@ -250,7 +250,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/examples/earth_engine.rst.txt" title="View this page">
+  <a class="muted-link" href="../_sources/stitching/example-modis-pds.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -270,49 +270,29 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="google-earth-engine">
-<h1>Google Earth Engine<a class="headerlink" href="#google-earth-engine" title="Link to this heading">¶</a></h1>
-<p>This example demonstrates how to use the Earth Data Kit to stitch together a Earth Engine collection.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">earth_data_kit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">edk</span>
-
-<span class="c1"># Initialize the Dataset using the Earth Engine.</span>
-<span class="n">dataset_id</span> <span class="o">=</span> <span class="s2">&quot;example_earth_engine_dataset&quot;</span>
-<span class="c1"># Replace with your actual Earth Engine collection ID (e.g., LANDSAT/LC08/C01/T1_SR).</span>
-<span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;LANDSAT/LC08/C01/T1_SR&quot;</span>
-<span class="n">engine</span> <span class="o">=</span> <span class="s2">&quot;earth_engine&quot;</span>
-
-<span class="n">ds</span> <span class="o">=</span> <span class="n">edk</span><span class="o">.</span><span class="n">stitching</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">dataset_id</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
-
-<span class="c1"># Set the time bounds for the dataset.</span>
-<span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">end_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">set_timebounds</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">)</span>
-
-<span class="c1"># Define the spatial bounding box (min_lon, min_lat, max_lon, max_lat)</span>
-<span class="n">bbox</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">122.75</span><span class="p">,</span> <span class="mf">36.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">121.75</span><span class="p">,</span> <span class="mf">37.8</span><span class="p">)</span>
-
-<span class="c1"># For Earth Engine collections, grid files are not needed.</span>
-<span class="c1"># Passing None for both grid file and extraction function.</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">set_spacebounds</span><span class="p">(</span><span class="n">bbox</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-
-<span class="c1"># Discover the available images within the specified temporal and spatial bounds.</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">discover</span><span class="p">()</span>
-
-<span class="c1"># Optionally, configure GDAL options (e.g., setting the target spatial reference).</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">set_target_options</span><span class="p">({</span>
-    <span class="s2">&quot;-t_srs&quot;</span><span class="p">:</span> <span class="s2">&quot;EPSG:3857&quot;</span><span class="p">,</span>
-<span class="p">})</span>
-
-<span class="c1"># Define the ordered list of band descriptions you wish to stitch together.</span>
-<span class="n">bands</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;B4&quot;</span><span class="p">,</span> <span class="s2">&quot;B3&quot;</span><span class="p">,</span> <span class="s2">&quot;B2&quot;</span><span class="p">]</span>
-
-<span class="c1"># Create the stitched VRTs from the provided Earth Engine data.</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">mosaic</span><span class="p">(</span><span class="n">bands</span><span class="p">)</span>
-
-<span class="c1"># This returns a dataarray with the stitched bands</span>
-<span class="n">da</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">to_dataarray</span><span class="p">()</span>
-</pre></div>
-</div>
+          <section id="example-modis-pds">
+<h1>Example: MODIS PDS<a class="headerlink" href="#example-modis-pds" title="Link to this heading">¶</a></h1>
+<p>A source pattern replaces parts of a file path with placeholders or wildcards to match multiple files with similar naming patterns.</p>
+<p>For example, consider MODIS data on AWS:</p>
+<ul class="simple">
+<li><p>MODIS on AWS: &lt;<a class="reference external" href="https://registry.opendata.aws/modis/">https://registry.opendata.aws/modis/</a>&gt;</p></li>
+<li><p>MODIS Documentation: &lt;<a class="reference external" href="https://docs.opendata.aws/modis-pds/readme.html">https://docs.opendata.aws/modis-pds/readme.html</a>&gt;</p></li>
+</ul>
+<p>Take this example scene file path:</p>
+<p><code class="docutils literal notranslate"><span class="pre">s3://modis-pds/MCD43A4.006/01/08/2013160/MCD43A4.A2013160.h00v08.006.2016138043045_B07.TIF</span></code></p>
+<p>The file path follows this layout as described in the documentation:</p>
+<p><code class="docutils literal notranslate"><span class="pre">/product/horizontal_grid/vertical_grid/date/DATA</span></code></p>
+<p>In this layout:</p>
+<ul class="simple">
+<li><p>The “product” segment identifies the dataset (e.g., “MCD43A4.006”).</p></li>
+<li><p>The “horizontal_grid” segment (e.g., “01”) is replaced with the placeholder {h}.</p></li>
+<li><p>The “vertical_grid” segment (e.g., “08”) is replaced with the placeholder {v}.</p></li>
+<li><p>The “date” segment (e.g., “2013160”) is formatted using Python’s “%Y%j” date format.</p></li>
+<li><p>The “DATA” segment represents the file name, where wildcards like * or ? (e.g., *_B07.TIF) can be used to select multiple files.</p></li>
+</ul>
+<p>Thus, the generalized source pattern becomes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">s3://modis-pds/MCD43A4.006/{h}/{v}/%Y%j/*_B07.TIF</span></code></p>
+<p>This pattern allows you to match and process all files that follow the same naming convention, regardless of the specific values of {h}, {v}, and the date.</p>
 </section>
 
         </article>
@@ -320,23 +300,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../roadmap.html">
+          <a class="next-page" href="using-a-grid-file.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Roadmap</div>
+                <div class="title">Using a Grid File</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="s3.html">
+          <a class="prev-page" href="defining-source.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">AWS S3</div>
+                <div class="title">Defining Source</div>
                 
               </div>
             </a>
