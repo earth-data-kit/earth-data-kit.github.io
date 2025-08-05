@@ -5,12 +5,12 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="EDK Accessor" href="edk-accessor.html" /><link rel="prev" title="API Reference" href="../api-reference.html" />
 
-    <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>Dataset - Earth Data Kit 0.1.2 documentation</title>
+    <!-- Generated with Sphinx 7.4.7 and Furo 2024.05.06 -->
+        <title>Dataset - Earth Data Kit 0.1.3.dev20250805 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=0bffc54f" />
     
     
@@ -90,6 +90,19 @@
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
   </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
   <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
     <title>Auto light/dark, in light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -130,7 +143,7 @@
       <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
       <path d="M13.5 6.5l4 4" />
       <path d="M20 21l2 -2l-2 -2" />
-      <path d="M17 17l-2 2l2 2" />
+      <path d="M17 17l-2 2l2 2" /
     </svg>
   </symbol>
   <symbol id="svg-eye" viewBox="0 0 24 24">
@@ -168,7 +181,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../contents.html"><div class="brand">Earth Data Kit 0.1.2 documentation</div></a>
+      <a href="../contents.html"><div class="brand">Earth Data Kit 0.1.3.dev20250805 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -192,7 +205,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../contents.html">
   
   
-  <span class="sidebar-brand-text">Earth Data Kit 0.1.2 documentation</span>
+  <span class="sidebar-brand-text">Earth Data Kit 0.1.3.dev20250805 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -276,18 +289,18 @@
 <dt class="sig sig-object py">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">earth_data_kit.stitching.</span></span><span class="sig-name descname"><span class="pre">Dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>The Dataset class is the main class implemented by the stitching module. It acts as a dataset wrapper and maps to a single remote dataset. A remote dataset can contain multiple files.</p>
-<p>Initializes a new dataset instance.</p>
+<p>Initialize a new dataset instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) – Unique identifier for the dataset.</p></li>
-<li><p><strong>source</strong> (<em>str</em>) – Source identifier (S3 URI or Earth Engine collection ID).</p></li>
-<li><p><strong>engine</strong> (<em>str</em>) – Data source engine - <code class="docutils literal notranslate"><span class="pre">s3</span></code> or <code class="docutils literal notranslate"><span class="pre">earth_engine</span></code>.</p></li>
-<li><p><strong>clean</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to clean temporary files before processing. Defaults to True.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Unique identifier for the dataset</p></li>
+<li><p><strong>source</strong> (<em>str</em>) – Source identifier (S3 URI or Earth Engine collection ID)</p></li>
+<li><p><strong>engine</strong> (<em>str</em>) – Data source engine - <code class="docutils literal notranslate"><span class="pre">s3</span></code> or <code class="docutils literal notranslate"><span class="pre">earth_engine</span></code></p></li>
+<li><p><strong>clean</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to clean temporary files before processing. Defaults to True</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>Exception</strong> – If the provided engine is not supported.</p>
+<dd class="field-even"><p><strong>Exception</strong> – If the provided engine is not supported</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
@@ -300,14 +313,15 @@
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">set_timebounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Sets time bounds for which we want to download the data.</p>
+<dd><p>Set time bounds for data download and optional temporal resolution for combining images.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>start</strong> (<em>datetime</em>) – Start date.</p></li>
-<li><p><strong>end</strong> (<em>datetime</em>) – End date, inclusive.</p></li>
-<li><p><strong>resolution</strong> (<em>str</em><em>, </em><em>optional</em>) – Temporal resolution for combining images.
-Options include ‘daily’.</p></li>
+<li><p><strong>start</strong> (<em>datetime</em>) – Start date</p></li>
+<li><p><strong>end</strong> (<em>datetime</em>) – End date (inclusive)</p></li>
+<li><p><strong>resolution</strong> (<em>str</em><em>, </em><em>optional</em>) – Temporal resolution (e.g., ‘D’ for daily, ‘W’ for weekly, ‘M’ for monthly)
+See pandas offset aliases for full list:
+<a class="reference external" href="https://pandas.pydata.org/docs/user_guide/timeseries.html#timeseries-offset-aliases">https://pandas.pydata.org/docs/user_guide/timeseries.html#timeseries-offset-aliases</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -316,51 +330,10 @@ Options include ‘daily’.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">earth_data_kit.stitching</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dataset</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="s2">&quot;example_dataset&quot;</span><span class="p">,</span> <span class="s2">&quot;LANDSAT/LC08/C01/T1_SR&quot;</span><span class="p">,</span> <span class="s2">&quot;earth_engine&quot;</span><span class="p">,</span> <span class="n">clean</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_timebounds</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">set_src_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Sets options for the source dataset.</p>
-<p>This method allows setting various options for the source dataset,
-including source nodata values that can be used during processing.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>options</strong> (<em>dict</em>) – A dictionary containing source options.
-Can include ‘-srcnodata’ which may be either:
-- A single value to be applied to all bands
-- An array of values, one for each band in the dataset</p>
-</dd>
-</dl>
-<p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="s2">&quot;example&quot;</span><span class="p">,</span> <span class="s2">&quot;path/to/data&quot;</span><span class="p">,</span> <span class="s2">&quot;file_system&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Set a single nodata value for all bands</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_src_options</span><span class="p">({</span><span class="s2">&quot;-srcnodata&quot;</span><span class="p">:</span> <span class="s2">&quot;-9999&quot;</span><span class="p">})</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">set_target_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Sets options for the target dataset.</p>
-<p>This method allows setting various GDAL options for the output dataset,
-which influence the gdalwarp process during VRT creation.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>options</strong> (<em>dict</em>) – A dictionary containing GDAL options.
-Common options include:
-- ‘-t_srs’: Target spatial reference system (projection)
-- ‘-tr’: Target resolution (x y, in target projection units)
-- ‘-r’: Resampling method (nearest, bilinear, cubic, etc.)</p>
-</dd>
-</dl>
-<p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="s2">&quot;example&quot;</span><span class="p">,</span> <span class="s2">&quot;path/to/data&quot;</span><span class="p">,</span> <span class="s2">&quot;file_system&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Set target projection, resolution and resampling method</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_target_options</span><span class="p">({</span><span class="s2">&quot;-t_srs&quot;</span><span class="p">:</span> <span class="s2">&quot;EPSG:3857&quot;</span><span class="p">,</span> <span class="s2">&quot;-tr&quot;</span><span class="p">:</span> <span class="s2">&quot;30 30&quot;</span><span class="p">,</span> <span class="s2">&quot;-r&quot;</span><span class="p">:</span> <span class="s2">&quot;bilinear&quot;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Set daily resolution</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_timebounds</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">),</span> <span class="n">resolution</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Set monthly resolution</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_timebounds</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">),</span> <span class="n">resolution</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -403,13 +376,14 @@ column defining the spatial extent of the grid cell.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">discover</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<span class="sig-name descname"><span class="pre">discover</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">band_locator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'description'</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Scans the dataset source to identify, catalog, and save the intersecting tiles based on
 provided time and spatial constraints.</p>
 <dl class="simple">
 <dt>This method follows a multi-step workflow:</dt><dd><ol class="arabic simple">
 <li><p>Invokes the engine’s scan method to retrieve a dataframe of available tile metadata
 that match the time and spatial options.</p></li>
+<li><p>Handles any subdatasets found in the scan results.</p></li>
 <li><p>Concurrently retrieves detailed metadata for each tile by constructing Tile objects
 using a ThreadPoolExecutor.</p></li>
 <li><p>Converts the user-specified bounding box into a Shapely polygon (in EPSG:4326) and
@@ -417,16 +391,19 @@ filters the tiles by comparing each tile’s extent (also converted to EPSG:4326
 bounding box using an intersection test.</p></li>
 <li><p>Saves the catalog of the intersecting tiles as a CSV file at the location specified by
 self.catalog_path.</p></li>
-<li><p>Discovers the overview information for the dataset.</p></li>
 </ol>
 </dd>
 </dl>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>None</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>band_locator</strong> (<em>str</em><em>, </em><em>optional</em>) – Specifies how to locate bands in the dataset.
+Defaults to “description”. Valid options are “description”, “color_interp”, “filename”.</p>
 </dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>Exception</strong> – Propagates any exceptions encountered during scanning, metadata retrieval,
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – Propagates any exceptions encountered during scanning, metadata retrieval,
     spatial filtering, or catalog saving.</p>
 </dd>
 </dl>
@@ -446,7 +423,7 @@ self.catalog_path.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;h&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;v&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">set_spacebounds</span><span class="p">((</span><span class="mf">19.30</span><span class="p">,</span> <span class="mf">39.62</span><span class="p">,</span> <span class="mf">21.02</span><span class="p">,</span> <span class="mf">42.69</span><span class="p">),</span> <span class="n">grid_dataframe</span><span class="o">=</span><span class="n">gdf</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">discover</span><span class="p">()</span> <span class="c1"># This will scan the dataset and save the catalog of intersecting tiles at the location specified by self.catalog_path</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">discover</span><span class="p">()</span> <span class="c1"># This will scan the dataset and save the catalog of intersecting tiles</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -507,13 +484,10 @@ is stored in a separate file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">mosaic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bands</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Stitches the scene files together into VRTs based on the ordered band arrangement provided.
-For each unique date, this function extracts the required bands from the tile metadata and
-creates individual single-band VRTs that are reprojected to EPSG:3857 by default (if no target spatial reference
-is specified). These single-band VRTs are then mosaiced per band and finally stacked into a multi-band VRT.</p>
-<p>GDAL options influencing the gdalwarp process can be configured using the <code class="xref py py-meth docutils literal notranslate"><span class="pre">edk.stitching.Dataset.set_target_options()</span></code> function.
-Also look at <code class="xref py py-meth docutils literal notranslate"><span class="pre">edk.stitching.Dataset.set_src_options()</span></code> for source dataset related options influencing the gdalwarp process, eg: srcnodataval.</p>
+<span class="sig-name descname"><span class="pre">mosaic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bands</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Identifies and extracts the required bands from the tile metadata for each unique date. For each band,
+it creates a single-band VRT that is then mosaiced together. These individual band mosaics are finally
+stacked into a multi-band VRT according to the ordered band arrangement provided.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>bands</strong> (<em>list</em><em>[</em><em>string</em><em>]</em>) – Ordered list of band descriptions to output as VRTs.</p>
@@ -657,10 +631,10 @@ and spatial coordinates.</p>
       
     </aside>
   </div>
-</div><script src="../_static/documentation_options.js?v=92734c54"></script>
+</div><script src="../_static/documentation_options.js?v=91416a46"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=30646c52"></script>
     </body>
