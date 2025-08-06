@@ -311,16 +311,14 @@
 <span class="c1"># Discover the available images within the specified temporal and spatial bounds.</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">discover</span><span class="p">()</span>
 
-<span class="c1"># Optionally, configure GDAL options (e.g., setting the target spatial reference).</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">set_target_options</span><span class="p">({</span>
-    <span class="s2">&quot;-t_srs&quot;</span><span class="p">:</span> <span class="s2">&quot;EPSG:3857&quot;</span><span class="p">,</span>
-<span class="p">})</span>
-
 <span class="c1"># Define the ordered list of band descriptions you wish to stitch together.</span>
 <span class="n">bands</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;B4&quot;</span><span class="p">,</span> <span class="s2">&quot;B3&quot;</span><span class="p">,</span> <span class="s2">&quot;B2&quot;</span><span class="p">]</span>
 
 <span class="c1"># Create the stitched VRTs from the provided Earth Engine data.</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">mosaic</span><span class="p">(</span><span class="n">bands</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">mosaic</span><span class="p">(</span><span class="n">bands</span><span class="p">,</span> <span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Should save for to_dataarray to work. Also creates a json file with the stitched bands which can be directly loaded later</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
 
 <span class="c1"># This returns a dataarray with the stitched bands</span>
 <span class="n">da</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">to_dataarray</span><span class="p">()</span>

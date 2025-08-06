@@ -318,16 +318,14 @@
 <span class="n">available_bands</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">get_bands</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discovered bands:&quot;</span><span class="p">,</span> <span class="n">available_bands</span><span class="p">)</span>
 
-<span class="c1"># Optionally, configure GDAL options (e.g., setting the target spatial reference).</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">set_target_options</span><span class="p">({</span>
-    <span class="s2">&quot;-t_srs&quot;</span><span class="p">:</span> <span class="s2">&quot;EPSG:3857&quot;</span><span class="p">,</span>
-<span class="p">})</span>
 
 <span class="c1"># Define the ordered list of band descriptions you wish to stitch together.</span>
 <span class="n">bands</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">]</span>
 
 <span class="c1"># Create the stitched VRTs from the provided S3 data.</span>
-<span class="n">ds</span><span class="o">.</span><span class="n">mosaic</span><span class="p">(</span><span class="n">bands</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">mosaic</span><span class="p">(</span><span class="n">bands</span><span class="p">,</span> <span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:3857&quot;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;uint16&quot;</span><span class="p">)</span>
+
+<span class="n">ds</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
 
 <span class="c1"># This returns a dataarray with the stitched bands</span>
 <span class="n">da</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">to_dataarray</span><span class="p">()</span>
